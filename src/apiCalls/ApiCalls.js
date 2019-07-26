@@ -1,4 +1,5 @@
-import {factOfTheDayCleaner,
+import {
+  factOfTheDayCleaner,
   randomFactsCleaner,
   randomAdviceCleaner,
   randomJokeCleaner,

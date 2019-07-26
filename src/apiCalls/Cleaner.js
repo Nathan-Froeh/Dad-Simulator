@@ -23,12 +23,21 @@ export const randomJokeCleaner = async (url) => {
 
 export const searchAdviceCleaner = async (url) => {
   const res = await get(url)
-  console.log(res)
-  return res
+  console.log(res.slips)
+  if(res.slips) {
+    return getRandom(res.slips)
+  } else {
+    return 'Invalid category'
+  }
 }
 
 export const searchJokeCleaner = async (url) => {
   const res = await get(url)
   console.log(res)
   return res
+}
+
+const getRandom = (array) => {
+  const index = Math.floor(Math.random() * (array.length - 0 + 1))
+  return array[index]
 }

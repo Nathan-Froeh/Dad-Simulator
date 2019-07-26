@@ -6,6 +6,7 @@ import {factOfTheDay,
   randomFacts,
   randomAdvice,
   randomJoke,
+  searchAdvice,
   // randomJoke,
   // searchAdvice,
   // searchJoke
@@ -18,8 +19,8 @@ class App extends Component {
     // this.props.getFactOfTheDay('factOfTheDay')
     // this.props.getRandomFacts('randomFacts')
     // this.props.getRandomAdvice('randomAdvice')
-    this.props.getRandomJoke('randomJokes')
-    // selectFetch('randomJokes')
+    // this.props.getRandomJoke('randomJokes')
+    this.props.getSearchAdvice('searchAdvice', 'cat')
     // selectFetch('searchAdvice', 'life')
     // selectFetch('searchJokes', 'dog')
   }
@@ -42,7 +43,9 @@ const mapDispatchToProps = dispatch => ({
     await selectFetch(advice))),
   getRandomJoke: async (joke) => dispatch(randomJoke(
       await selectFetch(joke))),
-  
+  getSearchAdvice: async (advice, category) => dispatch(searchAdvice(
+    await selectFetch(advice, category)
+  ))
   // getRandomJokes: {},
   // getSearchAdvice: {},
   // getSearchJokes: {}
