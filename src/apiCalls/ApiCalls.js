@@ -1,3 +1,5 @@
+import {factOfTheDayCleaner} from './Cleaner'
+
 
 const cors = 'https://cors-anywhere.herokuapp.com/'
 const factOfTheDay = 'https://uselessfacts.jsph.pl/today.json?language=en'
@@ -16,7 +18,7 @@ export const selectFetch = async (type, search) => {
   switch(type) {
     case 'factOfTheDay':
       console.log(type)
-      return await get(cors + factOfTheDay)
+      return await factOfTheDayCleaner(cors + factOfTheDay)
     case 'randomFacts':
       return await get(cors + randomFacts)
     case 'randomAdvice':
@@ -32,7 +34,7 @@ export const selectFetch = async (type, search) => {
   }
 }
 
-const get = async (url) => {
+export const get = async (url) => {
   const result = await fetch(url, method)
   const data = await result.json()
   return data
