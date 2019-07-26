@@ -13,3 +13,9 @@ export const randomAdvice = (advice) => ({
   type: 'RANDOM_ADVICE',
   payload: advice
 })
+
+export const randomJoke = (joke) => ({
+  type: 'RANDOM_JOKE',
+  payload: joke
+})
+
