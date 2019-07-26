@@ -26,14 +26,14 @@ export class Jokes extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getRandomJoke: async (joke) => dispatch(randomJoke(
     await selectFetch(joke))),
   getSearchJokes: async (joke, category) => dispatch(searchJoke(
     await selectFetch(joke, category)))
 })
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   randomJoke: state.randomJoke,
   searchJoke: state.searchJoke
 })

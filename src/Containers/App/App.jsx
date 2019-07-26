@@ -9,11 +9,11 @@ import {
   randomJoke,
   searchAdvice,
   searchJoke
-} from '../../Actions/index'
+} from '../../Actions/index';
 // import Home from '../Home/Home';
 // import Jokes from '../Jokes/Jokes';
-import Fact from '../Facts/Facts'
-
+import Fact from '../Facts/Facts';
+import Advice from '../Advice/Advice';
 
 class App extends Component {
 
