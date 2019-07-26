@@ -5,7 +5,7 @@ import {selectFetch} from '../../apiCalls/ApiCalls'
 import {factOfTheDay,
   randomFacts,
   randomAdvice,
-  // randomAdvice,
+  randomJoke,
   // randomJoke,
   // searchAdvice,
   // searchJoke
@@ -17,8 +17,8 @@ class App extends Component {
   componentDidMount() {
     // this.props.getFactOfTheDay('factOfTheDay')
     // this.props.getRandomFacts('randomFacts')
-    this.props.getRandomAdvice('randomAdvice')
-    // selectFetch('randomAdvice')
+    // this.props.getRandomAdvice('randomAdvice')
+    this.props.getRandomJoke('randomJokes')
     // selectFetch('randomJokes')
     // selectFetch('searchAdvice', 'life')
     // selectFetch('searchJokes', 'dog')
@@ -39,8 +39,10 @@ const mapDispatchToProps = dispatch => ({
   getRandomFacts: async (fact) => dispatch(randomFacts(
     await selectFetch(fact))),
   getRandomAdvice: async (advice) => dispatch(randomAdvice(
-    await selectFetch(advice)
-  )),
+    await selectFetch(advice))),
+  getRandomJoke: async (joke) => dispatch(randomJoke(
+      await selectFetch(joke))),
+  
   // getRandomJokes: {},
   // getSearchAdvice: {},
   // getSearchJokes: {}

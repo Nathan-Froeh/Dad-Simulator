@@ -17,8 +17,8 @@ export const randomAdviceCleaner = async (url) => {
 
 export const randomJokeCleaner = async (url) => {
   const res = await get(url)
-  console.log(res)
-  return res
+  console.log(res.joke)
+  return res.joke
 }
 
 export const searchAdviceCleaner = async (url) => {
