@@ -12,7 +12,7 @@ import {
 } from '../../Actions/index';
 // import Home from '../Home/Home';
 // import Jokes from '../Jokes/Jokes';
-import Fact from '../Facts/Facts';
+// import Fact from '../Facts/Facts';
 import Advice from '../Advice/Advice';
 
 class App extends Component {
@@ -20,8 +20,8 @@ class App extends Component {
   componentDidMount() {
     this.props.getFactOfTheDay('factOfTheDay')
     // this.props.getRandomFacts('randomFacts')
-    this.props.getRandomAdvice('randomAdvice')
-    this.props.getRandomJoke('randomJokes')
+    // this.props.getRandomAdvice('randomAdvice')
+    // this.props.getRandomJoke('randomJokes')
     this.props.getSearchAdvice('searchAdvice', 'cat')
     this.props.getSearchJokes('searchJokes', 'life')
   }
@@ -32,7 +32,8 @@ class App extends Component {
       {/* <p>hi</p> */}
       {/* <Home/> */}
       {/* <Jokes/> */}
-      <Fact/>
+      {/* <Fact/> */}
+      <Advice/>
     </div>
   );
   }
