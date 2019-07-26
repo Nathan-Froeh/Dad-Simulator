@@ -17,27 +17,28 @@ export const randomAdviceCleaner = async (url) => {
 
 export const randomJokeCleaner = async (url) => {
   const res = await get(url)
-  console.log(res.joke)
   return res.joke
 }
 
 export const searchAdviceCleaner = async (url) => {
   const res = await get(url)
-  console.log(res.slips)
   if(res.slips) {
     return getRandom(res.slips)
   } else {
-    return 'Invalid category'
+    return 'Invalid search category'
   }
 }
 
 export const searchJokeCleaner = async (url) => {
   const res = await get(url)
-  console.log(res)
-  return res
+  if(res.results.length !== 0) {
+   return getRandom(res.results).joke
+  } else {
+    return 'invalid search category'
+  }
 }
 
 const getRandom = (array) => {
-  const index = Math.floor(Math.random() * (array.length - 0 + 1))
+  const index = Math.floor(Math.random() * (array.length - 0))
   return array[index]
 }

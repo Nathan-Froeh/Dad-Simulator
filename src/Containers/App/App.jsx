@@ -2,27 +2,25 @@ import React, {Component} from 'react';
 import './App.scss';
 import {connect} from 'react-redux';
 import {selectFetch} from '../../apiCalls/ApiCalls'
-import {factOfTheDay,
+import {
+  factOfTheDay,
   randomFacts,
   randomAdvice,
   randomJoke,
   searchAdvice,
-  // randomJoke,
-  // searchAdvice,
-  // searchJoke
+  searchJoke
 } from '../../Actions/index'
 
 
 class App extends Component {
 
   componentDidMount() {
-    // this.props.getFactOfTheDay('factOfTheDay')
-    // this.props.getRandomFacts('randomFacts')
-    // this.props.getRandomAdvice('randomAdvice')
-    // this.props.getRandomJoke('randomJokes')
+    this.props.getFactOfTheDay('factOfTheDay')
+    this.props.getRandomFacts('randomFacts')
+    this.props.getRandomAdvice('randomAdvice')
+    this.props.getRandomJoke('randomJokes')
     this.props.getSearchAdvice('searchAdvice', 'cat')
-    // selectFetch('searchAdvice', 'life')
-    // selectFetch('searchJokes', 'dog')
+    this.props.getSearchJokes('searchJokes', 'life')
   }
 
   render() {
@@ -44,11 +42,9 @@ const mapDispatchToProps = dispatch => ({
   getRandomJoke: async (joke) => dispatch(randomJoke(
       await selectFetch(joke))),
   getSearchAdvice: async (advice, category) => dispatch(searchAdvice(
-    await selectFetch(advice, category)
-  ))
-  // getRandomJokes: {},
-  // getSearchAdvice: {},
-  // getSearchJokes: {}
+    await selectFetch(advice, category))),
+  getSearchJokes: async (joke, category) => dispatch(searchJoke(
+    await selectFetch(joke, category)))
 })
 
 export default connect(null, mapDispatchToProps)(App);

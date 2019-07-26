@@ -1,4 +1,4 @@
-export const searchJokes = (state = '', action) => {
+export const searchJokesReducer = (state = '', action) => {
   switch(action.type) {
     case 'SEARCH_JOKES':
       return action.payload
