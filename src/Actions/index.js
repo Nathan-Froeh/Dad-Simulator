@@ -4,7 +4,7 @@ export const factOfTheDay = (fact) => ({
   payload: fact
 })
 
-export const randomFacts = (fact) => ({
+export const randomFact = (fact) => ({
   type: 'RANDOM_FACT',
   payload: fact
 })

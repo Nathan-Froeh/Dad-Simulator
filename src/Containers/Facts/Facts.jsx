@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {selectFetch} from '../../apiCalls/ApiCalls';
-import {randomFacts} from '../../Actions/index';
+import {randomFact} from '../../Actions/index';
 
 
-export class Facts extends Component {
+export class Fact extends Component {
 
+  componentDidMount() {
+    this.props.getRandomFacts('randomFact')
+  }
 
   render() {
     return(
@@ -14,8 +17,19 @@ export class Facts extends Component {
           <img src="" alt="Menu button"/>
           <h1>Virtual Dad Simulator</h1>
         </nav>
-        <h2>stuff</h2>
+        <h2>{this.props.randomFact}</h2>
       </div>
     )
   }
 }
+
+export const mapDispatchToProps = dispatch => ({
+  getRandomFacts: async (fact) => dispatch(randomFact(
+    await selectFetch(fact)))
+})
+
+export const mapStateToProps = state => ({
+  randomFact: state.randomFact
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Fact)

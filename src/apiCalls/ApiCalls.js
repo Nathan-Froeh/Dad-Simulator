@@ -1,6 +1,6 @@
 import {
   factOfTheDayCleaner,
-  randomFactsCleaner,
+  randomFactCleaner,
   randomAdviceCleaner,
   randomJokeCleaner,
   searchAdviceCleaner,
@@ -26,9 +26,9 @@ export const selectFetch = async (type, search) => {
     case 'factOfTheDay':
       console.log(type)
       return await factOfTheDayCleaner(cors + factOfTheDay)
-    case 'randomFacts':
+    case 'randomFact':
         console.log(type)
-      return await randomFactsCleaner(cors + randomFacts)
+      return await randomFactCleaner(cors + randomFacts)
     case 'randomAdvice':
         console.log(type)
       return await randomAdviceCleaner(cors + randomAdvice)

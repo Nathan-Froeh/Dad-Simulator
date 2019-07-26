@@ -5,7 +5,7 @@ export const factOfTheDayCleaner = async (url) => {
   return res.text
 }
 
-export const randomFactsCleaner = async (url) => {
+export const randomFactCleaner = async (url) => {
   const res = await get(url)
   return res.data
 }
