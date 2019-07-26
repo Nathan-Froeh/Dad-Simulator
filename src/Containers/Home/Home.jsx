@@ -12,14 +12,18 @@ export class Home extends Component {
 
   isFactLoaded = () => {
     if(!this.props.factOfTheDay) {
-      this.props.getFactOfTheDay()
+      this.props.getFactOfTheDay('factOfTheDay')
     }
   }
 
   render() {
     return(
       <div className='home'>
-
+        <nav>
+          <img src="" alt="menu button"/>
+          <h1>Virtual Dad Simulator</h1>
+        </nav>
+        <h2>{this.props.factOfTheDay}</h2>
       </div>
     )
   }

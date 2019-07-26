@@ -10,7 +10,7 @@ import {
   searchAdvice,
   searchJoke
 } from '../../Actions/index'
-
+import Home from '../Home/Home'
 
 class App extends Component {
 
@@ -26,7 +26,8 @@ class App extends Component {
   render() {
   return (
     <div className="App">
-      hi
+      <p>hi</p>
+      <Home/>
     </div>
   );
   }
