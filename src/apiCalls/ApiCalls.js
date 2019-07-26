@@ -1,4 +1,6 @@
-import {factOfTheDayCleaner} from './Cleaner'
+import {factOfTheDayCleaner,
+  randomFactsCleaner
+} from './Cleaner'
 
 
 const cors = 'https://cors-anywhere.herokuapp.com/'
@@ -20,14 +22,19 @@ export const selectFetch = async (type, search) => {
       console.log(type)
       return await factOfTheDayCleaner(cors + factOfTheDay)
     case 'randomFacts':
-      return await get(cors + randomFacts)
+        console.log(type)
+      return await randomFactsCleaner(cors + randomFacts)
     case 'randomAdvice':
+        console.log(type)
       return await get(cors + randomAdvice)
     case 'randomJokes':
+        console.log(type)
       return await get(cors + randomJokes)
     case 'searchAdvice':
+        console.log(type)
       return await get(cors + searchAdvice + search)
     case 'searchJokes':
+        console.log(type)
       return await get(cors + searchJokes + search)
     default:
       return null

@@ -15,7 +15,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.getFactOfTheDay('factOfTheDay')
-    this.props.getRandomFacts('factOfTheDay')
+    this.props.getRandomFacts('randomFacts')
     // selectFetch('randomFacts')
     // selectFetch('randomAdvice')
     // selectFetch('randomJokes')
@@ -33,8 +33,10 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getFactOfTheDay: async (fact) => dispatch(factOfTheDay(await selectFetch(fact))),
-  getRandomFacts: async (fact) => dispatch(await randomFacts(fact)),
+  getFactOfTheDay: async (fact) => dispatch(factOfTheDay(
+    await selectFetch(fact))),
+  getRandomFacts: async (fact) => dispatch(randomFacts(
+    await selectFetch(fact))),
   // getRandomAdvice: {},
   // getRandomJokes: {},
   // getSearchAdvice: {},
