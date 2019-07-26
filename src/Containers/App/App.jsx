@@ -22,8 +22,8 @@ class App extends Component {
     // this.props.getRandomFacts('randomFacts')
     // this.props.getRandomAdvice('randomAdvice')
     // this.props.getRandomJoke('randomJokes')
-    this.props.getSearchAdvice('searchAdvice', 'cat')
-    this.props.getSearchJokes('searchJokes', 'life')
+    // this.props.getSearchAdvice('searchAdvice', 'cat')
+    // this.props.getSearchJokes('searchJokes', 'life')
   }
 
   render() {

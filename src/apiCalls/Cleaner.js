@@ -23,7 +23,7 @@ export const randomJokeCleaner = async (url) => {
 export const searchAdviceCleaner = async (url) => {
   const res = await get(url)
   if(res.slips) {
-    return getRandom(res.slips)
+    return getRandom(res.slips).advice
   } else {
     return 'Invalid search category'
   }

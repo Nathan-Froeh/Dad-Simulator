@@ -8,9 +8,40 @@ import {
 
 
 export class Advice extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      category: 'random',
+      visibleAdvice: 'random'
+    }
+  }
 
   componentDidMount() {
+    this.handleSubmit()
+  }
+
+  handleChange = (e) => {
+    console.log(e)
+    this.setState({category: e.target.value.toLowerCase()})
+  }
+
+  handleSubmit = (e) => {
+    if(e) {
+      e.preventDefault()
+    }
+    this.state.category === 'random' 
+      ? this.viewRandom() 
+      : this.viewCategory()
+  }
+
+  viewRandom = () => {
     this.props.getRandomAdvice('randomAdvice')
+    this.setState({visibleAdvice: 'random'})
+  }
+
+  viewCategory = () => {
+    this.props.getSearchAdvice('searchAdvice', this.state.category)
+    this.setState({visibleAdvice: 'search'})
   }
 
   render() {
@@ -20,7 +51,17 @@ export class Advice extends Component {
           <img src="" alt="Menu button"/>
           <h1>Virtual Dad Simulator</h1>
         </nav>
-        <h2>{this.props.randomAdvice}</h2>
+        <form onSubmit={this.handleSubmit}>
+          <input 
+            type="text" 
+            name='category' 
+            value={this.state.category}
+            onChange={this.handleChange}
+          />
+          <input type="submit" value='Refresh'/>
+        </form>
+        <h2>{this.state.visibleAdvice === 'random' && this.props.randomAdvice}</h2>
+        <h2>{this.state.visibleAdvice === 'search' && this.props.searchAdvice}</h2>
       </div>
     )
   }
