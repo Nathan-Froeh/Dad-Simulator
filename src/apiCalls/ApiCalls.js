@@ -1,5 +1,9 @@
 import {factOfTheDayCleaner,
-  randomFactsCleaner
+  randomFactsCleaner,
+  randomAdviceCleaner,
+  randomJokeCleaner,
+  searchAdviceCleaner,
+  searchJokeCleaner
 } from './Cleaner'
 
 
@@ -26,16 +30,16 @@ export const selectFetch = async (type, search) => {
       return await randomFactsCleaner(cors + randomFacts)
     case 'randomAdvice':
         console.log(type)
-      return await get(cors + randomAdvice)
+      return await randomAdviceCleaner(cors + randomAdvice)
     case 'randomJokes':
         console.log(type)
-      return await get(cors + randomJokes)
+      return await randomJokeCleaner(cors + randomJokes)
     case 'searchAdvice':
         console.log(type)
-      return await get(cors + searchAdvice + search)
+      return await searchAdviceCleaner(cors + searchAdvice + search)
     case 'searchJokes':
         console.log(type)
-      return await get(cors + searchJokes + search)
+      return await searchJokeCleaner(cors + searchJokes + search)
     default:
       return null
   }

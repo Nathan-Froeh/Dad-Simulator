@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {selectFetch} from '../../apiCalls/ApiCalls'
 import {factOfTheDay,
   randomFacts,
+  randomAdvice,
   // randomAdvice,
   // randomJoke,
   // searchAdvice,
@@ -14,9 +15,9 @@ import {factOfTheDay,
 class App extends Component {
 
   componentDidMount() {
-    this.props.getFactOfTheDay('factOfTheDay')
-    this.props.getRandomFacts('randomFacts')
-    // selectFetch('randomFacts')
+    // this.props.getFactOfTheDay('factOfTheDay')
+    // this.props.getRandomFacts('randomFacts')
+    this.props.getRandomAdvice('randomAdvice')
     // selectFetch('randomAdvice')
     // selectFetch('randomJokes')
     // selectFetch('searchAdvice', 'life')
@@ -37,7 +38,9 @@ const mapDispatchToProps = dispatch => ({
     await selectFetch(fact))),
   getRandomFacts: async (fact) => dispatch(randomFacts(
     await selectFetch(fact))),
-  // getRandomAdvice: {},
+  getRandomAdvice: async (advice) => dispatch(randomAdvice(
+    await selectFetch(advice)
+  )),
   // getRandomJokes: {},
   // getSearchAdvice: {},
   // getSearchJokes: {}

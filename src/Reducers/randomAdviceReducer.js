@@ -1,4 +1,4 @@
-export const randomAdvice = (state = '', action) => {
+export const randomAdviceReducer = (state = '', action) => {
   switch(action.type) {
     case 'RANDOM_ADVICE':
       return action.payload
