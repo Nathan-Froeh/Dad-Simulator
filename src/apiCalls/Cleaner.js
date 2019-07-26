@@ -4,3 +4,8 @@ export const factOfTheDayCleaner = async (url) => {
   const res = await get(url)
   return res.text
 }
+
+export const randomFactsCleaner = async (url) => {
+  const res = await get(url)
+  return res
+}

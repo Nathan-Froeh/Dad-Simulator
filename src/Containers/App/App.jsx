@@ -1,15 +1,21 @@
 import React, {Component} from 'react';
 import './App.scss';
 import {connect} from 'react-redux';
-import {factOfTheDay} from '../../Actions/index'
 import {selectFetch} from '../../apiCalls/ApiCalls'
+import {factOfTheDay,
+  randomFacts,
+  // randomAdvice,
+  // randomJoke,
+  // searchAdvice,
+  // searchJoke
+} from '../../Actions/index'
 
 
 class App extends Component {
 
   componentDidMount() {
     this.props.getFactOfTheDay('factOfTheDay')
-    // selectFetch('factOfTheDay')
+    this.props.getRandomFacts('factOfTheDay')
     // selectFetch('randomFacts')
     // selectFetch('randomAdvice')
     // selectFetch('randomJokes')
@@ -27,8 +33,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getFactOfTheDay: async (fact) => dispatch(factOfTheDay(await selectFetch(fact)))
-  // getRandomFacts: {},
+  getFactOfTheDay: async (fact) => dispatch(factOfTheDay(await selectFetch(fact))),
+  getRandomFacts: async (fact) => dispatch(await randomFacts(fact)),
   // getRandomAdvice: {},
   // getRandomJokes: {},
   // getSearchAdvice: {},

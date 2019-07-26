@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
-import {factOfTheDay} from './factOfTheDayReducer'
+import {factOfTheDayReducer} from './factOfTheDayReducer'
+import {randomFactsReducer} from './randomFactsReducer'
 const testReducer = () => {
   switch(true) {
     default:
@@ -9,7 +10,8 @@ const testReducer = () => {
 
 const allReducers = combineReducers({
   test: testReducer,
-  factOfTheDay: factOfTheDay
+  factOfTheDay: factOfTheDayReducer,
+  randomFact: randomFactsReducer,
 })
 
 export default allReducers;
