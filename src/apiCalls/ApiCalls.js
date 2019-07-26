@@ -32,13 +32,13 @@ export const selectFetch = async (type, search) => {
     case 'randomAdvice':
         console.log(type)
       return await randomAdviceCleaner(cors + randomAdvice)
-    case 'randomJokes':
+    case 'randomJoke':
         console.log(type)
       return await randomJokeCleaner(cors + randomJokes)
     case 'searchAdvice':
         console.log(type)
       return await searchAdviceCleaner(cors + searchAdvice + search)
-    case 'searchJokes':
+    case 'searchJoke':
         console.log(type)
       return await searchJokeCleaner(cors + searchJokes + search)
     default:

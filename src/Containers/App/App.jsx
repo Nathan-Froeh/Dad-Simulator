@@ -11,9 +11,9 @@ import {
   searchJoke
 } from '../../Actions/index';
 // import Home from '../Home/Home';
-// import Jokes from '../Jokes/Jokes';
+import Jokes from '../Jokes/Jokes';
 // import Fact from '../Facts/Facts';
-import Advice from '../Advice/Advice';
+// import Advice from '../Advice/Advice';
 
 class App extends Component {
 
@@ -31,9 +31,9 @@ class App extends Component {
     <div className="App">
       {/* <p>hi</p> */}
       {/* <Home/> */}
-      {/* <Jokes/> */}
+      <Jokes/>
       {/* <Fact/> */}
-      <Advice/>
+      {/* <Advice/> */}
     </div>
   );
   }
