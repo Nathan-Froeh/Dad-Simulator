@@ -24,3 +24,7 @@ export const searchAdvice = (advice) => ({
   payload: advice
 })
 
+export const searchJoke = (joke) => ({
+  type: 'SEARCH_JOKE',
+  payload: joke
+})
