@@ -12,5 +12,12 @@ export const randomFactsCleaner = async (url) => {
 
 export const randomAdviceCleaner = async (url) => {
   const res = await get(url)
-  return res.data
+  console.log(res)
+  return res
+}
+
+export const randomJokeCleaner = async (url) => {
+  const res = await get(url)
+  console.log(res)
+  return res
 }
