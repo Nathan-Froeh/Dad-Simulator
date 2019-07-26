@@ -8,3 +8,8 @@ export const randomFacts = (fact) => ({
   type: 'RANDOM_FACT',
   payload: fact
 })
+
+export const randomAdvice = (advice) => ({
+  type: 'RANDOM_ADVICE',
+  payload: advice
+})
