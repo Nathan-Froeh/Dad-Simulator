@@ -23,21 +23,41 @@ describe('Cleaner', () => {
 
   })
 
+  it('randomFactCleaner should return Batman', async () => {
+
+  })
+
   it('randomAdviceCleaner should call get with url', () => {
     
+  })
+
+  it('randomAdviceCleaner should return Batman', async () => {
+
   })
 
   it('randomJokeCleaner should call get with url', () => {
     
   })
 
+  it('randomJokeCleaner should return Batman', async () => {
+
+  })  
+
   it('searchAdviceCleaner should call get with url', () => {
     
   })
 
+  it('searchAdviceCleaner should return Batman', async () => {
+
+  }) 
+
   it('searchJokeCleaner should call get with url', () => {
     
   })
+
+  it('searchJokeCleaner should return Batman', async () => {
+
+  }) 
 
   it('getRandom should return a number between 1 and 10', () => {
 
