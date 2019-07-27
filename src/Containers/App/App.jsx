@@ -51,7 +51,7 @@ export class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getFactOfTheDay: async (fact) => dispatch(factOfTheDay(
     await selectFetch(fact)))
 })

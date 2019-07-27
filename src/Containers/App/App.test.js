@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {App} from './App';
+import {
+  App,
+  mapDispatchToProps
+} from './App';
 import {shallow} from 'enzyme';
-
 
 // 60 |      100 |       50 |       75 
 // 55
@@ -25,6 +26,13 @@ describe('App', () => {
     expect(props.getFactOfTheDay).toHaveBeenCalledTimes(2)
     wrapper.instance().componentDidMount()
     expect(props.getFactOfTheDay).toHaveBeenCalledTimes(3)
+  })
+
+  describe('mapDispatchToProps', () => {
+
+    xit('should contain getFactOfTheDay', () => {
+
+    })
   })
 
 })
