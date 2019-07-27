@@ -5,7 +5,6 @@ import {randomFact} from '../../Actions/index';
 
 
 export class Fact extends Component {
-
   componentDidMount() {
     this.props.getRandomFacts('randomFact')
   }

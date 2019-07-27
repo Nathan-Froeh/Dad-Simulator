@@ -21,7 +21,6 @@ export class Advice extends Component {
   }
 
   handleChange = (e) => {
-    console.log(e)
     this.setState({category: e.target.value.toLowerCase()})
   }
 
