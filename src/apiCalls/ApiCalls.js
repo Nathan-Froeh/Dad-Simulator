@@ -47,7 +47,12 @@ export const selectFetch = async (type, search) => {
 }
 
 export const get = async (url) => {
-  const result = await fetch(url, method)
-  const data = await result.json()
-  return data
+  return fetch(url, method)
+    .then(res => {
+      if(res.ok) {
+        return res.json()
+      } else { throw Error('Error')}
+    })
+
+
 }

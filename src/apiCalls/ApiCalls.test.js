@@ -9,17 +9,24 @@ describe('ApiCalls', () => {
     method: 'GET',
     headers:{'Accept': 'application/json'}
   }
+  const data = {
+    joke: 'I stepped on a dog and my foot got wet, it was a poodle'
+  }
 
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve()
+      json: () => Promise.resolve(data)
     }))
   })
 
   it('fetch should be called with url and method', () => {
     get(url)
     expect(window.fetch).toHaveBeenCalledWith(url, method)
+  })
+
+  it('fetch should return a data object', async () => {
+    expect(await get(url)).toEqual(data)
   })
 
 })
