@@ -7,6 +7,10 @@ import {NavLink} from 'react-router-dom';
 
 export class Facts extends Component {
   componentDidMount() {
+    this.getFact()
+  }
+
+  getFact = () => {
     this.props.getRandomFacts('randomFact')
   }
 
@@ -19,6 +23,7 @@ export class Facts extends Component {
           </NavLink>
           <h1>Virtual Dad Simulator</h1>
         </nav>
+        <button onClick={this.getFact}>Refresh</button>
         <h2>{this.props.randomFact}</h2>
       </div>
     )
