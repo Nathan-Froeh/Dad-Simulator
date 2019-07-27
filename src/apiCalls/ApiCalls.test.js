@@ -29,4 +29,11 @@ describe('ApiCalls', () => {
     expect(await get(url)).toEqual(data)
   })
 
+  it('should throw ok.false error', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false
+    }))
+    await expect(get(url)).rejects.toEqual(Error('Error'))
+  })
+
 })

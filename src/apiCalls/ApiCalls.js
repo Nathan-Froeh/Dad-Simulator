@@ -53,6 +53,7 @@ export const get = async (url) => {
         return res.json()
       } else { throw Error('Error')}
     })
+    // .catch (error => {throw Error(error)})
 
 
 }
