@@ -4,7 +4,7 @@ import {selectFetch} from '../../apiCalls/ApiCalls';
 import {randomFact} from '../../Actions/index';
 
 
-export class Fact extends Component {
+export class Facts extends Component {
   componentDidMount() {
     this.props.getRandomFacts('randomFact')
   }
@@ -31,4 +31,4 @@ export const mapStateToProps = state => ({
   randomFact: state.randomFact
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Fact)
+export default connect(mapStateToProps, mapDispatchToProps)(Facts)
