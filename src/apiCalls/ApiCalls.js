@@ -1,11 +1,4 @@
-import {
-  // factOfTheDayCleaner,
-  // randomFactCleaner,
-  // randomAdviceCleaner,
-  // randomJokeCleaner,
-  // searchAdviceCleaner,
-  // searchJokeCleaner
-} from './Cleaner'
+
 import Call from './Cleaner'
 
 export const cors = 'https://cors-anywhere.herokuapp.com/'

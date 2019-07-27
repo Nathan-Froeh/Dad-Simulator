@@ -9,14 +9,6 @@ import {
   searchAdvice,
   searchJokes
 } from './ApiCalls';
-// import {
-//   factOfTheDayCleaner,
-//   randomFactCleaner,
-//   randomAdviceCleaner,
-//   randomJokeCleaner,
-//   searchAdviceCleaner,
-//   searchJokeCleaner
-// } from './Cleaner'
 import Call from './Cleaner';
 
 
@@ -54,9 +46,39 @@ describe('ApiCalls', () => {
   })
 
   it('selectFetch should call factOfTheDayCleaner with url', async () => {
-    const mockFunc = jest.spyOn(Call, 'factOfTheDayCleaner')
+    Call.factOfTheDayCleaner = jest.fn()
     await selectFetch('factOfTheDay')
-    expect(mockFunc).toHaveBeenCalledWith(cors + factOfTheDay)
+    expect(Call.factOfTheDayCleaner).toHaveBeenCalledWith(cors + factOfTheDay)
+  })
+
+  it('selectFetch should call randomFactCleaner with url', async () => {
+    Call.randomFactCleaner = jest.fn()
+    await selectFetch('randomFact')
+    expect(Call.randomFactCleaner).toHaveBeenCalledWith(cors + randomFacts)
+  })
+
+  it('selectFetch should call randomAdviceCleaner with url', async () => {
+    Call.randomAdviceCleaner = jest.fn()
+    await selectFetch('randomAdvice')
+    expect(Call.randomAdviceCleaner).toHaveBeenCalledWith(cors + randomAdvice)
+  })
+
+  xit('selectFetch should call randomJokeCleaner with url', async () => {
+    const mockFunc = jest.spyOn(Call, 'randomJokeCleaner')
+    await selectFetch('randomJoke')
+
+  })
+
+  xit('selectFetch should call searchAdviceCleaner with url', async () => {
+    const mockFunc = jest.spyOn(Call, 'searchAdviceCleaner')
+    await selectFetch('searchAdvice')
+
+  })
+
+  xit('selectFetch should call searchJokeCleaner with url', async () => {
+    const mockFunc = jest.spyOn(Call, 'searchJokeCleaner')
+    await selectFetch('searchJoke')
+
   })
 
 })
