@@ -64,9 +64,9 @@ describe('ApiCalls', () => {
   })
 
   xit('selectFetch should call randomJokeCleaner with url', async () => {
-    const mockFunc = jest.spyOn(Call, 'randomJokeCleaner')
+    Call.randomJokeCleaner = jest.fn()
     await selectFetch('randomJoke')
-
+    expect(Call.randomJokeCleaner).toHaveBeenCalledWith(cors + randomJokes)
   })
 
   xit('selectFetch should call searchAdviceCleaner with url', async () => {
