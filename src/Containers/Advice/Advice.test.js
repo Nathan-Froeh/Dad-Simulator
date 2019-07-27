@@ -71,7 +71,12 @@ describe('Advice', () => {
     expect(props.getRandomAdvice).toHaveBeenCalledTimes(9)
   })
 
-
+  it('viewRandom should setState visibleAdvice to random', () => {
+    wrapper.setState({visibleAdvice: 'search'})
+    expect(wrapper.state('visibleAdvice')).toBe('search')
+    instance.viewRandom()
+    expect(wrapper.state('visibleAdvice')).toBe('random')
+  })
 
   it('viewCategory should call getSearchAdvice', () => {
     expect(props.getSearchAdvice).toHaveBeenCalledTimes(0)
