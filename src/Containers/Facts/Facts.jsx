@@ -2,11 +2,15 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {selectFetch} from '../../apiCalls/ApiCalls';
 import {randomFact} from '../../Actions/index';
+import {NavLink} from 'react-router-dom';
 
 
-export class Fact extends Component {
-
+export class Facts extends Component {
   componentDidMount() {
+    this.getFact()
+  }
+
+  getFact = () => {
     this.props.getRandomFacts('randomFact')
   }
 
@@ -14,9 +18,12 @@ export class Fact extends Component {
     return(
       <div>
         <nav>
-          <img src="" alt="Menu button"/>
+          <NavLink to={'/menu'}>
+            <p>Menu</p>
+          </NavLink>
           <h1>Virtual Dad Simulator</h1>
         </nav>
+        <button onClick={this.getFact}>Refresh</button>
         <h2>{this.props.randomFact}</h2>
       </div>
     )
@@ -32,4 +39,4 @@ export const mapStateToProps = state => ({
   randomFact: state.randomFact
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Fact)
+export default connect(mapStateToProps, mapDispatchToProps)(Facts)

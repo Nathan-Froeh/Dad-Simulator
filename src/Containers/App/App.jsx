@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './App.scss';
 import {connect} from 'react-redux';
-import {selectFetch} from '../../apiCalls/ApiCalls'
+import {selectFetch} from '../../apiCalls/ApiCalls';
+import {Route} from 'react-router-dom';
 import {
   factOfTheDay,
   randomFact,
@@ -10,30 +11,41 @@ import {
   searchAdvice,
   searchJoke
 } from '../../Actions/index';
-// import Home from '../Home/Home';
+import Home from '../Home/Home';
 import Jokes from '../Jokes/Jokes';
-// import Fact from '../Facts/Facts';
-// import Advice from '../Advice/Advice';
+import Facts from '../Facts/Facts';
+import Advice from '../Advice/Advice';
+import Menu from '../../Components/Menu/Menu'
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
     this.props.getFactOfTheDay('factOfTheDay')
-    // this.props.getRandomFacts('randomFacts')
-    // this.props.getRandomAdvice('randomAdvice')
-    // this.props.getRandomJoke('randomJokes')
-    // this.props.getSearchAdvice('searchAdvice', 'cat')
-    // this.props.getSearchJokes('searchJokes', 'life')
   }
 
   render() {
   return (
     <div className="App">
-      {/* <p>hi</p> */}
-      {/* <Home/> */}
-      <Jokes/>
-      {/* <Fact/> */}
-      {/* <Advice/> */}
+      <Route
+        path='/menu'
+        component={Menu}
+      />
+      <Route
+        path='/jokes'
+        component={Jokes}
+      />
+      <Route
+        path='/facts'
+        component={Facts}
+      />
+      <Route
+        path='/advice'
+        component={Advice}
+      />
+      <Route
+        exact path='/'
+        component={Home}
+      />
     </div>
   );
   }
