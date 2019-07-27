@@ -81,4 +81,8 @@ describe('ApiCalls', () => {
     expect(Call.searchJokeCleaner).toHaveBeenCalledWith(cors + searchJokes + 'Batman')
   })
 
+  it('selectFetch should return null', async () => {
+    expect(await selectFetch('')).toEqual(null)
+  })
+
 })

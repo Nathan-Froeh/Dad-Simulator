@@ -35,6 +35,7 @@ export const selectFetch = async (type, search) => {
         console.log(type)
       return await Call.searchJokeCleaner(cors + searchJokes + search)
     default:
+      console.log('null')
       return null
   }
 }
