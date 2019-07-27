@@ -75,10 +75,10 @@ describe('ApiCalls', () => {
     expect(Call.searchAdviceCleaner).toHaveBeenCalledWith(cors + searchAdvice + 'Batman')
   })
 
-  xit('selectFetch should call searchJokeCleaner with url', async () => {
-    const mockFunc = jest.spyOn(Call, 'searchJokeCleaner')
-    await selectFetch('searchJoke')
-
+  it('selectFetch should call searchJokeCleaner with url', async () => {
+    Call.searchJokeCleaner = jest.fn()
+    await selectFetch('searchJoke', 'Batman')
+    expect(Call.searchJokeCleaner).toHaveBeenCalledWith(cors + searchJokes + 'Batman')
   })
 
 })
