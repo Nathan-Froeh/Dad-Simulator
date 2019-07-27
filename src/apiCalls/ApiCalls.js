@@ -17,37 +17,37 @@ export const selectFetch = async (type, search) => {
   // console.log(type)
   switch(type) {
     case 'factOfTheDay':
-      console.log(type)
+      // console.log(type)
       return await Call.factOfTheDayCleaner(cors + factOfTheDay)
     case 'randomFact':
-        console.log(type)
+        // console.log(type)
       return await Call.randomFactCleaner(cors + randomFacts)
     case 'randomAdvice':
-        console.log(type)
+        // console.log(type)
       return await Call.randomAdviceCleaner(cors + randomAdvice)
     case 'randomJoke':
-        console.log(type)
+        // console.log(type)
       return await Call.randomJokeCleaner(cors + randomJokes)
     case 'searchAdvice':
-        console.log(type)
+        // console.log(type)
       return await Call.searchAdviceCleaner(cors + searchAdvice + search)
     case 'searchJoke':
-        console.log(type)
+        // console.log(type)
       return await Call.searchJokeCleaner(cors + searchJokes + search)
     default:
-      console.log('null')
+      // console.log('null')
       return null
   }
 }
 
-export const get = async (url) => {
-  return fetch(url, method)
-    .then(res => {
-      if(res.ok) {
-        return res.json()
-      } else { throw Error('Error')}
-    })
+export const fetchCall = {
+  async get(url) {
+    return fetch(url, method)
+      .then(res => {
+        if(res.ok) {
+          return res.json()
+        } else { throw Error('Error')}
+      })
     // .catch (error => {throw Error(error)})
-
-
+  }
 }

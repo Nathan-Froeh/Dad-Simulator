@@ -1,5 +1,5 @@
 import {
-  get,
+  fetchCall,
   selectFetch,
   cors,
   factOfTheDay,
@@ -30,19 +30,19 @@ describe('ApiCalls', () => {
   })
 
   it('fetch should be called with url and method', () => {
-    get(url)
+    fetchCall.get(url)
     expect(window.fetch).toHaveBeenCalledWith(url, method)
   })
 
   it('fetch should return a data object', async () => {
-    expect(await get(url)).toEqual(data)
+    expect(await fetchCall.get(url)).toEqual(data)
   })
 
   it('should throw ok.false error', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: false
     }))
-    await expect(get(url)).rejects.toEqual(Error('Error'))
+    await expect(fetchCall.get(url)).rejects.toEqual(Error('Error'))
   })
 
   it('selectFetch should call factOfTheDayCleaner with url', async () => {
