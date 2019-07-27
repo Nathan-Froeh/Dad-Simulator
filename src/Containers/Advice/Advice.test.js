@@ -6,6 +6,9 @@ import {
   mapStateToProps
 } from './Advice';
 
+// 63.64 |     62.5 |    45.45 |       70
+// 25,30,43,44,73,75
+
 
 describe('Advice', () => {
   let wrapper, instance
@@ -22,6 +25,12 @@ describe('Advice', () => {
 
   it('should match snap shot', () => {
     expect(wrapper).toMatchSnapshot()
+  })
+
+  it('componentDidMount should call handleSubmit', () => {
+    instance.handleSubmit = jest.fn()
+    instance.componentDidMount()
+    expect(instance.handleSubmit).toHaveBeenCalled()
   })
 
 })
