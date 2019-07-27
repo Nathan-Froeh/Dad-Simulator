@@ -5,6 +5,7 @@ import {
   randomAdvice,
   searchAdvice
 } from '../../Actions/index';
+import {NavLink} from 'react-router-dom';
 
 
 export class Advice extends Component {
@@ -47,7 +48,9 @@ export class Advice extends Component {
     return(
       <div>
         <nav>
-          <img src="" alt="Menu button"/>
+          <NavLink to={'/menu'}>
+            <p>Menu</p>
+          </NavLink>
           <h1>Virtual Dad Simulator</h1>
         </nav>
         <form onSubmit={this.handleSubmit}>
