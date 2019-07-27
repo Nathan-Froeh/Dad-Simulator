@@ -57,5 +57,13 @@ describe('Advice', () => {
     expect(instance.viewRandom).toHaveBeenCalled()
   })
 
+  it('handleSubmit should call viewCategory', () => {
+    wrapper.setState({category: 'dog'})
+    instance.viewCategory = jest.fn()
+    expect(instance.viewCategory).not.toHaveBeenCalled()
+    instance.handleSubmit(event)
+    expect(instance.viewCategory).toHaveBeenCalled()
+  })
+
 })
 
