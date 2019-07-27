@@ -4,7 +4,7 @@ import {fetchCall} from './ApiCalls';
 
 describe('Cleaner', () => {
   const url = 'https://batman.com';
-
+  const invalid = 'Invalid search category'
   beforeEach(() => {
     fetchCall.get = jest.fn()
   })
@@ -68,6 +68,16 @@ describe('Cleaner', () => {
     fetchCall.get = jest.fn(() => ({results:[{joke:'Batman'}]}))
     expect(await Call.searchJokeCleaner(url)).toEqual('Batman')
   }) 
+
+  it('searchAdviceCleaner should return Invalid search category', async () => {
+    fetchCall.get = jest.fn(() => ({}))
+    expect(await Call.searchAdviceCleaner(url)).toEqual(invalid)
+  })
+
+  it('searchJokeCleaner should return Invalid search category', async () => {
+    fetchCall.get = jest.fn(() => ({results:[]}))
+    expect(await Call.searchJokeCleaner(url)).toEqual(invalid)
+  })
 
   it('getRandom should return a number between 0 and 9', () => {
     const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

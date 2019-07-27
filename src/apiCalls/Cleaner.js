@@ -37,7 +37,7 @@ async searchJokeCleaner(url) {
   if(res.results.length !== 0) {
    return this.getRandom(res.results).joke
   } else {
-    return 'invalid search category'
+    return 'Invalid search category'
   }
 },
 
