@@ -43,4 +43,12 @@ describe('Actions', () => {
     expect(randomJoke(input)).toEqual(expected)
   })
 
+  it('searchAdvice should return a matching object', () => {
+    const expected = {
+      type: 'SEARCH_ADVICE',
+      payload: input
+    }
+    expect(searchAdvice(input)).toEqual(expected)
+  })
+
 })
