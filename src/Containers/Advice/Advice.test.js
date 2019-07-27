@@ -50,5 +50,12 @@ describe('Advice', () => {
     expect(event.preventDefault).toHaveBeenCalled()
   })
 
+  it('handleSubmit should call viewRandom', () => {
+    instance.viewRandom = jest.fn()
+    expect(instance.viewRandom).not.toHaveBeenCalled()
+    instance.handleSubmit(event)
+    expect(instance.viewRandom).toHaveBeenCalled()
+  })
+
 })
 
