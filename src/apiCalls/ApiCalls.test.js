@@ -1,7 +1,24 @@
 import {
   get,
-  selectFetch
-} from './ApiCalls'
+  selectFetch,
+  cors,
+  factOfTheDay,
+  randomFacts,
+  randomAdvice,
+  randomJokes,
+  searchAdvice,
+  searchJokes
+} from './ApiCalls';
+// import {
+//   factOfTheDayCleaner,
+//   randomFactCleaner,
+//   randomAdviceCleaner,
+//   randomJokeCleaner,
+//   searchAdviceCleaner,
+//   searchJokeCleaner
+// } from './Cleaner'
+import Call from './Cleaner';
+
 
 describe('ApiCalls', () => {
   const url = 'https://batman.com'
@@ -34,6 +51,12 @@ describe('ApiCalls', () => {
       ok: false
     }))
     await expect(get(url)).rejects.toEqual(Error('Error'))
+  })
+
+  it('selectFetch should call factOfTheDayCleaner with url', async () => {
+    const mockFunc = jest.spyOn(Call, 'factOfTheDayCleaner')
+    await selectFetch('factOfTheDay')
+    expect(mockFunc).toHaveBeenCalledWith(cors + factOfTheDay)
   })
 
 })

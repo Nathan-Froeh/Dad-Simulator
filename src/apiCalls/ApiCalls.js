@@ -1,20 +1,20 @@
 import {
-  factOfTheDayCleaner,
-  randomFactCleaner,
-  randomAdviceCleaner,
-  randomJokeCleaner,
-  searchAdviceCleaner,
-  searchJokeCleaner
+  // factOfTheDayCleaner,
+  // randomFactCleaner,
+  // randomAdviceCleaner,
+  // randomJokeCleaner,
+  // searchAdviceCleaner,
+  // searchJokeCleaner
 } from './Cleaner'
+import Call from './Cleaner'
 
-
-const cors = 'https://cors-anywhere.herokuapp.com/'
-const factOfTheDay = 'https://uselessfacts.jsph.pl/today.json?language=en'
-const randomFacts = 'https://useless-facts.sameerkumar.website/api'
-const randomAdvice = 'https://api.adviceslip.com/advice'
-const randomJokes = 'https://icanhazdadjoke.com/'
-const searchAdvice = 'https://api.adviceslip.com/advice/search/'
-const searchJokes = 'https://icanhazdadjoke.com/search?term='
+export const cors = 'https://cors-anywhere.herokuapp.com/'
+export const factOfTheDay = 'https://uselessfacts.jsph.pl/today.json?language=en'
+export const randomFacts = 'https://useless-facts.sameerkumar.website/api'
+export const randomAdvice = 'https://api.adviceslip.com/advice'
+export const randomJokes = 'https://icanhazdadjoke.com/'
+export const searchAdvice = 'https://api.adviceslip.com/advice/search/'
+export const searchJokes = 'https://icanhazdadjoke.com/search?term='
 const method = {
   method: 'GET',
   headers:{'Accept': 'application/json'}
@@ -25,22 +25,22 @@ export const selectFetch = async (type, search) => {
   switch(type) {
     case 'factOfTheDay':
       console.log(type)
-      return await factOfTheDayCleaner(cors + factOfTheDay)
+      return await Call.factOfTheDayCleaner(cors + factOfTheDay)
     case 'randomFact':
         console.log(type)
-      return await randomFactCleaner(cors + randomFacts)
+      return await Call.randomFactCleaner(cors + randomFacts)
     case 'randomAdvice':
         console.log(type)
-      return await randomAdviceCleaner(cors + randomAdvice)
+      return await Call.randomAdviceCleaner(cors + randomAdvice)
     case 'randomJoke':
         console.log(type)
-      return await randomJokeCleaner(cors + randomJokes)
+      return await Call.randomJokeCleaner(cors + randomJokes)
     case 'searchAdvice':
         console.log(type)
-      return await searchAdviceCleaner(cors + searchAdvice + search)
+      return await Call.searchAdviceCleaner(cors + searchAdvice + search)
     case 'searchJoke':
         console.log(type)
-      return await searchJokeCleaner(cors + searchJokes + search)
+      return await Call.searchJokeCleaner(cors + searchJokes + search)
     default:
       return null
   }
