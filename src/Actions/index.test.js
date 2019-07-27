@@ -19,4 +19,12 @@ describe('Actions', () => {
     expect(factOfTheDay(input)).toEqual(expected)
   })
 
+  it('randomFact should return a matching object', () => {
+    const expected = {
+      type: 'RANDOM_FACT',
+      payload: input
+    }
+    expect(randomFact(input)).toEqual(expected)
+  })
+
 })
