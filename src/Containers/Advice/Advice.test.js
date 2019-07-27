@@ -71,5 +71,13 @@ describe('Advice', () => {
     expect(props.getRandomAdvice).toHaveBeenCalledTimes(9)
   })
 
+
+
+  it('viewCategory should call getSearchAdvice', () => {
+    expect(props.getSearchAdvice).toHaveBeenCalledTimes(0)
+    instance.viewCategory()
+    expect(props.getSearchAdvice).toHaveBeenCalledTimes(1)
+  })
+
 })
 
