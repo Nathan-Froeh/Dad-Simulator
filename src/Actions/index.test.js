@@ -27,4 +27,12 @@ describe('Actions', () => {
     expect(randomFact(input)).toEqual(expected)
   })
 
+  it('randomAdvice should return a matching object', () => {
+    const expected = {
+      type: 'RANDOM_ADVICE',
+      payload: input
+    }
+    expect(randomAdvice(input)).toEqual(expected)
+  })
+
 })
