@@ -9,7 +9,7 @@ import Jokes from '../Jokes/Jokes';
 import Facts from '../Facts/Facts';
 import Advice from '../Advice/Advice';
 import Menu from '../../Components/Menu/Menu'
-
+import NoMatch from '../../Components/NoMatch/NoMatch'
 export class App extends Component {
 
   componentDidMount() {
@@ -21,23 +21,23 @@ export class App extends Component {
     <div className="App">
       <Switch>
       <Route
-        path='/menu'
+        exact path='/menu'
         component={Menu}
       />
       <Route
-        path='/jokes'
+        exact path='/jokes'
         component={Jokes}
       />
       <Route
-        path='/facts'
+        exact path='/facts'
         component={Facts}
       />
       <Route
-        path='/advice'
+        exact path='/advice'
         component={Advice}
       />
       <Route
-        path='/'
+        exact path='/'
         component={Home}
       />
       <Route
