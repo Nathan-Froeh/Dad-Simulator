@@ -18,6 +18,12 @@ describe('Advice', () => {
     randomAdvice: 'randomAdvice',
     searchAdvice: 'searchAdvice'
   }
+  const event = {
+    preventDefault: jest.fn(),
+    target: {
+      value: 'BATMAN'
+    }
+  }
   beforeEach(() => {
     wrapper = shallow(<Advice {...props}/>)
     instance = wrapper.instance()
@@ -31,6 +37,12 @@ describe('Advice', () => {
     instance.handleSubmit = jest.fn()
     instance.componentDidMount()
     expect(instance.handleSubmit).toHaveBeenCalled()
+  })
+
+  it('handleChange sets state of category to lowercase batman', () => {
+    expect(wrapper.state('category')).toEqual('random')
+    instance.handleChange(event)
+    expect(wrapper.state('category')).toEqual('batman')
   })
 
 })
