@@ -31,12 +31,12 @@ export class Home extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getFactOfTheDay: async (fact) => dispatch(factOfTheDay(
     await selectFetch(fact)))
 })
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   factOfTheDay: state.factOfTheDay
 })
 

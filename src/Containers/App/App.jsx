@@ -17,15 +17,10 @@ import Facts from '../Facts/Facts';
 import Advice from '../Advice/Advice';
 import Menu from '../../Components/Menu/Menu'
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
     this.props.getFactOfTheDay('factOfTheDay')
-    // this.props.getRandomFacts('randomFacts')
-    // this.props.getRandomAdvice('randomAdvice')
-    // this.props.getRandomJoke('randomJokes')
-    // this.props.getSearchAdvice('searchAdvice', 'cat')
-    // this.props.getSearchJokes('searchJokes', 'life')
   }
 
   render() {
