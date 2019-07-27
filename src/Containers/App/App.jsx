@@ -2,15 +2,8 @@ import React, {Component} from 'react';
 import './App.scss';
 import {connect} from 'react-redux';
 import {selectFetch} from '../../apiCalls/ApiCalls';
-import {Route} from 'react-router-dom';
-import {
-  factOfTheDay,
-  randomFact,
-  randomAdvice,
-  randomJoke,
-  searchAdvice,
-  searchJoke
-} from '../../Actions/index';
+import {Route, Switch} from 'react-router-dom';
+import {factOfTheDay} from '../../Actions/index';
 import Home from '../Home/Home';
 import Jokes from '../Jokes/Jokes';
 import Facts from '../Facts/Facts';
@@ -26,6 +19,7 @@ export class App extends Component {
   render() {
   return (
     <div className="App">
+      <Switch>
       <Route
         path='/menu'
         component={Menu}
@@ -43,9 +37,13 @@ export class App extends Component {
         component={Advice}
       />
       <Route
-        exact path='/'
+        path='/'
         component={Home}
       />
+      <Route
+        component={NoMatch}
+      />
+      </Switch>
     </div>
   );
   }
@@ -53,17 +51,7 @@ export class App extends Component {
 
 const mapDispatchToProps = dispatch => ({
   getFactOfTheDay: async (fact) => dispatch(factOfTheDay(
-    await selectFetch(fact))),
-  getRandomFact: async (fact) => dispatch(randomFact(
-    await selectFetch(fact))),
-  getRandomAdvice: async (advice) => dispatch(randomAdvice(
-    await selectFetch(advice))),
-  getRandomJoke: async (joke) => dispatch(randomJoke(
-      await selectFetch(joke))),
-  getSearchAdvice: async (advice, category) => dispatch(searchAdvice(
-    await selectFetch(advice, category))),
-  getSearchJokes: async (joke, category) => dispatch(searchJoke(
-    await selectFetch(joke, category)))
+    await selectFetch(fact)))
 })
 
 export default connect(null, mapDispatchToProps)(App);
