@@ -5,9 +5,14 @@ import {
   mapDispatchToProps,
   mapStateToProps
 } from './Advice';
+import {
+  randomAdvice,
+  searchAdvice
+} from '../../Actions/index';
+import {selectFetch} from '../../apiCalls/ApiCalls';
 
-// 63.64 |     62.5 |    45.45 |       70
-// 25,30,43,44,73,75
+// 86.36 |      100 |    72.73 |       90 
+// 73,75
 
 
 describe('Advice', () => {
@@ -89,6 +94,36 @@ describe('Advice', () => {
     expect(wrapper.state('visibleAdvice')).toBe('random')
     instance.viewCategory()
     expect(wrapper.state('visibleAdvice')).toBe('search')
+  })
+
+  describe('mapDispatchToProps', () => {
+    xit('mapDispatchToProps.getRandomAdvice should be jest.fn()', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = randomAdvice(await selectFetch('random'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.getRandomAdvice('random')
+    
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+
+    xit('mapDispatchToProps.getSearchAdvice should be jest.fn()', async () => {
+    
+    })
+  })
+  describe('mapStateToProps', () => {
+
+    it('randomAdvice should have a state of randomAdvice', () => {
+      const mockState = {
+        randomAdvice: 'randomAdvice',
+        searchAdvice: 'searchAdvice'
+      }
+      const expected = {
+        randomAdvice: 'randomAdvice',
+        searchAdvice: 'searchAdvice'
+      }
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
+    })
   })
 
 })
