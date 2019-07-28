@@ -4,7 +4,7 @@ import {randomFactsReducer} from './randomFactsReducer';
 import {randomAdviceReducer} from './randomAdviceReducer';
 import {randomJokesReducer} from './randomJokesReducer';
 import {searchAdviceReducer} from './searchAdviceReducer';
-import {searchJokesReducer} from './searchJokesReducer'
+import {searchJokesReducer} from './searchJokesReducer';
 
 const allReducers = combineReducers({
   factOfTheDay: factOfTheDayReducer,

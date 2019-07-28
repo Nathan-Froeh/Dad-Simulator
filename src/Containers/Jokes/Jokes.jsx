@@ -57,6 +57,7 @@ export class Jokes extends Component {
             name='category' 
             value={this.state.category}
             onChange={this.handleChange}
+            className='input'
           />
           <input type="submit" value='Refresh'/>
         </form>
