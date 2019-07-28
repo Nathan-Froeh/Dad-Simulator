@@ -65,7 +65,7 @@ export class Advice extends Component {
               value={this.state.category}
               onChange={this.handleChange}
             />
-            <input type="submit" value='Refresh'/>
+            <input type="submit" value='More Advice' className='button'/>
           </form>
           <h2>{this.state.visibleAdvice === 'random' 
             && this.props.randomAdvice}</h2>

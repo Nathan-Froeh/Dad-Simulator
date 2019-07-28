@@ -34,9 +34,16 @@
     padding: 0 5% 20% 5%;
     h2 {
       line-height: 8vh;
+      width: 100%;
     }
     button {
-      background: #DF2935;
+      height: 30px;
+      width: 50%;
+      border: none;
+      border-radius: 10px;
+      background: black;
+      color: white;
+      font-size: 20px;
     }
   }
 }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-
+import './Menu.scss'
 
 class Menu extends Component {
 
@@ -9,17 +9,17 @@ class Menu extends Component {
       <nav>
         <h1>Virtual Dad Simulator</h1>
         <div>
-          <NavLink to={'/'}>
-            <p>Home</p>
+          <NavLink to={'/'} className='link'>
+            <button>Home</button>
           </NavLink>
-          <NavLink to={'/facts'}>
-            <p>Facts</p>
+          <NavLink to={'/facts'} className='link'>
+            <button>Facts</button>
           </NavLink>
-          <NavLink to={'/jokes'}>
-            <p>Jokes</p>
+          <NavLink to={'/jokes'} className='link'>
+            <button>Jokes</button>
           </NavLink>
-          <NavLink to={'/advice'}>
-            <p>Advice</p>
+          <NavLink to={'/advice'} className='link'>
+            <button>Advice</button>
           </NavLink>
         </div>
       </nav>
