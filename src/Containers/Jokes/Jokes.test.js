@@ -81,4 +81,10 @@ describe('Jokes', () => {
     expect(wrapper.state('visibleJoke')).toEqual('random')
   })
 
+  it('viewCategory should call getSearchJoke', () => {
+    expect(props.getSearchJoke).not.toHaveBeenCalled()
+    instance.viewCategory()
+    expect(props.getSearchJoke).toHaveBeenCalledTimes(1)
+  })
+
 })
