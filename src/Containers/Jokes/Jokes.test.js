@@ -87,4 +87,11 @@ describe('Jokes', () => {
     expect(props.getSearchJoke).toHaveBeenCalledTimes(1)
   })
 
+  it('viewCategory should set state to search', () => {
+    wrapper.setState({visibleJoke: 'random'})
+    expect(wrapper.state('visibleJoke')).toEqual('random')
+    instance.viewCategory()
+    expect(wrapper.state('visibleJoke')).toEqual('search')
+  })
+
 })
