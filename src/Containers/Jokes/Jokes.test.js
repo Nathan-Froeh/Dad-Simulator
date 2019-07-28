@@ -68,4 +68,10 @@ describe('Jokes', () => {
     expect(instance.viewCategory).toHaveBeenCalled()
   })
 
+  it('viewRandom should call getRandom', () => {
+    expect(props.getRandomJoke).toHaveBeenCalledTimes(8)
+    instance.viewRandom()
+    expect(props.getRandomJoke).toHaveBeenCalledTimes(9)
+  })
+
 })
