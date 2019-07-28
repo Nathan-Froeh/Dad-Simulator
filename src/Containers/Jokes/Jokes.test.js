@@ -101,4 +101,11 @@ describe('Jokes', () => {
     expect(instance.handleChange).toHaveBeenCalled()
   })
 
+  xit('input should call handleSubmit on change', () => {
+    instance.handleSubmit = jest.fn()
+    expect(instance.handleSubmit).not.toHaveBeenCalled()
+    wrapper.find('form').simulate('submit', event)
+    expect(instance.handleSubmit).toHaveBeenCalled()
+  })
+
 })
