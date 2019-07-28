@@ -33,7 +33,7 @@ export class Facts extends Component {
             onClick={this.getFact} 
             className='button'
           >
-            Random Facts
+            Dad Facts
           </button>
           <h2>{this.props.randomFact}</h2>
         </main>

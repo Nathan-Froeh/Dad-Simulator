@@ -65,7 +65,7 @@ export class Jokes extends Component {
               onChange={this.handleChange}
               className='input'
             />
-            <input type="submit" value='More Jokes' className='button'/>
+            <input type="submit" value='Dad Jokes' className='button'/>
           </form>
           <h2>{this.state.visibleJoke === 'random' 
             && this.props.randomJoke}</h2>
