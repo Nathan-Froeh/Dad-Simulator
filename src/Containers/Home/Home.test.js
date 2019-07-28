@@ -34,4 +34,11 @@ describe('Home', () => {
     instance.isFactLoaded()
     expect(props.getFactOfTheDay).not.toHaveBeenCalled()
   })
+
+  it('isFactLoaded should call getFactOfTheDay', () => {
+    wrapper.setProps({factOfTheDay: ''})
+    expect(props.getFactOfTheDay).not.toHaveBeenCalled()
+    instance.isFactLoaded()
+    expect(props.getFactOfTheDay).toHaveBeenCalled()
+  })
 })
