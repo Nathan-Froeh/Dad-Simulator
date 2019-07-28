@@ -9,6 +9,12 @@ import {
 
 describe('Jokes', () => {
   let wrapper, instance
+  const event = {
+    preventDefault: jest.fn(),
+    target: {
+      value: 'BATMAN'
+    }
+  }
   const props = {
     getRandomJoke: jest.fn(),
     getSearchJoke: jest.fn(),
@@ -32,6 +38,12 @@ describe('Jokes', () => {
     expect(instance.handleSubmit).not.toHaveBeenCalled()
     instance.componentDidMount()
     expect(instance.handleSubmit).toHaveBeenCalled()
+  })
+
+  it('handleChange should set category state in lower case', () => {
+    expect(wrapper.state('category')).toEqual('random')
+    instance.handleChange(event)
+    expect(wrapper.state('category')).toEqual('batman')
   })
 
 })
