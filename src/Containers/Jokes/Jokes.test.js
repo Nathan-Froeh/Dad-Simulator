@@ -27,4 +27,11 @@ describe('Jokes', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
+  it('componentDidMount should call handleSubmit', () => {
+    instance.handleSubmit = jest.fn()
+    expect(instance.handleSubmit).not.toHaveBeenCalled()
+    instance.componentDidMount()
+    expect(instance.handleSubmit).toHaveBeenCalled()
+  })
+
 })
