@@ -6,6 +6,8 @@ import {
   searchJoke
 } from '../../Actions/index';
 import {NavLink} from 'react-router-dom';
+import './Jokes.scss';
+import menu from '../../images/menu.png';
 
 export class Jokes extends Component {
   constructor(props) {
@@ -44,25 +46,32 @@ export class Jokes extends Component {
 
   render() {
     return(
-      <div>
+      <div className='jokes'>
         <nav>
-          <NavLink to={'/menu'}>
-            <p>Menu</p>
+          <NavLink 
+            to={'/menu'}
+            className='menu'  
+          >
+            <img src={menu} alt='menu button'/>
           </NavLink>
           <h1>Virtual Dad Simulator</h1>
         </nav>
-        <form onSubmit={this.handleSubmit}>
-          <input 
-            type="text" 
-            name='category' 
-            value={this.state.category}
-            onChange={this.handleChange}
-            className='input'
-          />
-          <input type="submit" value='Refresh'/>
-        </form>
-        <h2>{this.state.visibleJoke === 'random' && this.props.randomJoke}</h2>
-        <h2>{this.state.visibleJoke === 'search' && this.props.searchJoke}</h2>
+        <main>
+          <form onSubmit={this.handleSubmit}>
+            <input 
+              type="text" 
+              name='category' 
+              value={this.state.category}
+              onChange={this.handleChange}
+              className='input'
+            />
+            <input type="submit" value='Refresh'/>
+          </form>
+          <h2>{this.state.visibleJoke === 'random' 
+            && this.props.randomJoke}</h2>
+          <h2>{this.state.visibleJoke === 'search' 
+            && this.props.searchJoke}</h2>
+        </main>
       </div>
     )
   }
