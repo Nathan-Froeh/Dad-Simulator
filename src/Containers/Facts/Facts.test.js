@@ -49,6 +49,15 @@ describe('Facts', () => {
   })  
 
   describe('mapStateToProps', () => {
-
+    it('randomFact should have a state of randomFact', () => {
+      const mockState = {
+        randomFact: 'randomFact'
+      }
+      const expected = {
+        randomFact: 'randomFact'
+      }
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
+    })
   })
 })
