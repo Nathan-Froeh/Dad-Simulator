@@ -94,4 +94,11 @@ describe('Jokes', () => {
     expect(wrapper.state('visibleJoke')).toEqual('search')
   })
 
+  xit('input should call handleChange on change', () => {
+    instance.handleChange = jest.fn()
+    expect(instance.handleChange).not.toHaveBeenCalled()
+    wrapper.find('.input').simulate('change', event)
+    expect(instance.handleChange).toHaveBeenCalled()
+  })
+
 })
