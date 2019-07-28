@@ -7,6 +7,9 @@ import {
 } from './Home';
 
 
+// 70 |      100 |       50 |     87.5
+// 35
+
 describe('Home', () => {
   let wrapper, instance
   const props = {
@@ -40,5 +43,16 @@ describe('Home', () => {
     expect(props.getFactOfTheDay).not.toHaveBeenCalled()
     instance.isFactLoaded()
     expect(props.getFactOfTheDay).toHaveBeenCalled()
+  })
+
+  it('factOfTheDay should have a state of factOfTheDay', () => {
+    const mockState = {
+      factOfTheDay: 'factOfTheDay'
+    }
+    const expected = {
+      factOfTheDay: 'factOfTheDay'
+    }
+    const mappedProps = mapStateToProps(mockState)
+    expect(mappedProps).toEqual(expected)
   })
 })
