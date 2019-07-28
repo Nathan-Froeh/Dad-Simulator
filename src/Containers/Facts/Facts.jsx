@@ -29,7 +29,13 @@ export class Facts extends Component {
           <h1>Virtual Dad Simulator</h1>
         </nav>
         <main>
-          <button onClick={this.getFact} className='button'>Refresh</button>
+          <h2>Random facts</h2>
+          <button 
+            onClick={this.getFact} 
+            className='button'
+          >
+            Refresh
+          </button>
           <h2>{this.props.randomFact}</h2>
         </main>
       </div>
