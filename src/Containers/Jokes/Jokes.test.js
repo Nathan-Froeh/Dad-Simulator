@@ -101,11 +101,30 @@ describe('Jokes', () => {
     expect(instance.handleChange).toHaveBeenCalled()
   })
 
-  xit('input should call handleSubmit on change', () => {
+  xit('form submit should call handleSubmit on change', () => {
     instance.handleSubmit = jest.fn()
     expect(instance.handleSubmit).not.toHaveBeenCalled()
     wrapper.find('form').simulate('submit', event)
     expect(instance.handleSubmit).toHaveBeenCalled()
+  })
+
+  describe('mapDispatchToProps', () => {
+
+  })
+
+  describe('mapStateToProps', () => {
+    it('mapStateToProps should contain randomJoke and searchJoke', () => {
+      const mockState = {
+        randomJoke: 'randomJoke',
+        searchJoke: 'searchJoke'
+      }
+      const expected = {
+        randomJoke: 'randomJoke',
+        searchJoke: 'searchJoke'
+      }
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
+    })
   })
 
 })
