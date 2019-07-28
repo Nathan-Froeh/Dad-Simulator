@@ -15,9 +15,17 @@ describe('Home', () => {
   }
   beforeEach(() => {
     wrapper = shallow(<Home{...props}/>)
+    instance = wrapper.instance()
   })
 
   it('Home should match snapshot', () => {
     expect(wrapper).toMatchSnapshot()
+  })
+
+  it('componentDidMount should call isFactLoaded', () => {
+    instance.isFactLoaded = jest.fn()
+    expect(instance.isFactLoaded).not.toHaveBeenCalled()
+    instance.componentDidMount()
+    expect(instance.isFactLoaded).toHaveBeenCalled()
   })
 })
