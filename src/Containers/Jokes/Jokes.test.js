@@ -74,4 +74,11 @@ describe('Jokes', () => {
     expect(props.getRandomJoke).toHaveBeenCalledTimes(9)
   })
 
+  it('viewRandom should set state to random', () => {
+    wrapper.setState({visibleJoke: 'search'})
+    expect(wrapper.state('visibleJoke')).toEqual('search')
+    instance.viewRandom()
+    expect(wrapper.state('visibleJoke')).toEqual('random')
+  })
+
 })
