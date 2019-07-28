@@ -52,4 +52,12 @@ describe('Jokes', () => {
     expect(event.preventDefault).toHaveBeenCalled()
   })
 
+  it('handleSubmit should call viewRandom', () => {
+    wrapper.setState({category: 'random'})
+    instance.viewRandom = jest.fn()
+    expect(instance.viewRandom).not.toHaveBeenCalled()
+    instance.handleSubmit()
+    expect(instance.viewRandom).toHaveBeenCalled()
+  })
+
 })
