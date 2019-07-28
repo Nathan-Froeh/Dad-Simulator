@@ -28,4 +28,10 @@ describe('Home', () => {
     instance.componentDidMount()
     expect(instance.isFactLoaded).toHaveBeenCalled()
   })
+
+  it('isFactLoaded should not call getFactOfTheDay', () => {
+    expect(props.getFactOfTheDay).not.toHaveBeenCalled()
+    instance.isFactLoaded()
+    expect(props.getFactOfTheDay).not.toHaveBeenCalled()
+  })
 })
