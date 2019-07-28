@@ -1,9 +1,38 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import {
+  App,
+  mapDispatchToProps
+} from './App';
+import {shallow} from 'enzyme';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+// 60 |      100 |       50 |       75 
+// 55
+
+describe('App', () => {
+  let wrapper
+  const props = {
+    getFactOfTheDay: jest.fn()
+  }
+  beforeEach(() => {
+    wrapper = shallow(<App {...props}/>)
+
+  })
+
+  it('App should mathc snapshot', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('componentDidMount should call getFactOfTheDay', () => {
+    expect(props.getFactOfTheDay).toHaveBeenCalledTimes(2)
+    wrapper.instance().componentDidMount()
+    expect(props.getFactOfTheDay).toHaveBeenCalledTimes(3)
+  })
+
+  describe('mapDispatchToProps', () => {
+
+    xit('should contain getFactOfTheDay', () => {
+
+    })
+  })
+
+})

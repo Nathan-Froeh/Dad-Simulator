@@ -1,44 +1,50 @@
-import {get} from './ApiCalls'
+import {fetchCall} from './ApiCalls'
 
-export const factOfTheDayCleaner = async (url) => {
-  const res = await get(url)
+const Call = {
+
+async factOfTheDayCleaner(url) {
+  console.log('factOfTheDayCleaner')
+  const res = await fetchCall.get(url)
   return res.text
-}
+},
 
-export const randomFactCleaner = async (url) => {
-  const res = await get(url)
+async randomFactCleaner(url) {
+  const res = await fetchCall.get(url)
   return res.data
-}
+},
 
-export const randomAdviceCleaner = async (url) => {
-  const res = await get(url)
+async randomAdviceCleaner(url) {
+  const res = await fetchCall.get(url)
   return res.slip.advice
-}
+},
 
-export const randomJokeCleaner = async (url) => {
-  const res = await get(url)
+async randomJokeCleaner(url) {
+  const res = await fetchCall.get(url)
   return res.joke
-}
+},
 
-export const searchAdviceCleaner = async (url) => {
-  const res = await get(url)
+async searchAdviceCleaner(url) {
+  const res = await fetchCall.get(url)
   if(res.slips) {
-    return getRandom(res.slips).advice
+    return this.getRandom(res.slips).advice
   } else {
     return 'Invalid search category'
   }
-}
+},
 
-export const searchJokeCleaner = async (url) => {
-  const res = await get(url)
+async searchJokeCleaner(url) {
+  const res = await fetchCall.get(url)
   if(res.results.length !== 0) {
-   return getRandom(res.results).joke
+   return this.getRandom(res.results).joke
   } else {
-    return 'invalid search category'
+    return 'Invalid search category'
   }
-}
+},
 
-const getRandom = (array) => {
+getRandom(array) {
   const index = Math.floor(Math.random() * (array.length - 0))
   return array[index]
 }
+}
+
+export default Call
