@@ -6,6 +6,9 @@ import {
   mapStateToProps
 } from './Jokes';
 
+// 86.36 |      100 |    72.73 |       90
+// 72,74 
+
 
 describe('Jokes', () => {
   let wrapper, instance
