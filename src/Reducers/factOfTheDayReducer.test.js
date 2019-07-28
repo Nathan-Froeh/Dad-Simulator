@@ -9,4 +9,12 @@ describe('factOfTheDayReducer', () => {
   it('should return Batman', () => {
     expect(factOfTheDayReducer('', action)).toEqual('Batman')
   })
+
+  it('should return state', () => {
+    const action = {
+      type: '',
+      payload: 'Batman'
+    }
+    expect(factOfTheDayReducer('', action)).toEqual('')
+  })
 })
