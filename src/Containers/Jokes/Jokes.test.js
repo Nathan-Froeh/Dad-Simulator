@@ -46,4 +46,10 @@ describe('Jokes', () => {
     expect(wrapper.state('category')).toEqual('batman')
   })
 
+  it('handleSubmit should run preventDefault', () => {
+    expect(event.preventDefault).not.toHaveBeenCalled()
+    instance.handleSubmit(event)
+    expect(event.preventDefault).toHaveBeenCalled()
+  })
+
 })
