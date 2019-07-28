@@ -6,6 +6,8 @@ import {
 } from './Facts';
 import {shallow} from 'enzyme';
 
+// 70 |      100 |       50 |     87.5 
+// 35
 
 describe('Facts', () => {
   let wrapper, instance
@@ -34,6 +36,12 @@ describe('Facts', () => {
     instance.getFact()
     expect(props.getRandomFacts).toHaveBeenCalledTimes(4)
   })  
+
+  xit('should call getFact on click', () => {
+    wrapper.instance().getFact = jest.fn()
+    wrapper.find('button').simulate('click')
+    expect(wrapper.instance().getFact).toHaveBeenCalled()
+  })
 
 
   describe('mapDispatchToProps', () => {

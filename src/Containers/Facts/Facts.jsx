@@ -11,6 +11,7 @@ export class Facts extends Component {
   }
 
   getFact = () => {
+    console.log('hi')
     this.props.getRandomFacts('randomFact')
   }
 
@@ -23,7 +24,7 @@ export class Facts extends Component {
           </NavLink>
           <h1>Virtual Dad Simulator</h1>
         </nav>
-        <button onClick={this.getFact}>Refresh</button>
+        <button onClick={this.getFact} className='button'>Refresh</button>
         <h2>{this.props.randomFact}</h2>
       </div>
     )
