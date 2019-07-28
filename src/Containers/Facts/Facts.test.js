@@ -6,7 +6,7 @@ import {
 } from './Facts';
 import {shallow} from 'enzyme';
 
-// 70 |      100 |       50 |     87.5 
+// 80 |      100 |    66.67 |     87.5 
 // 35
 
 describe('Facts', () => {
