@@ -7,8 +7,8 @@ import {
 } from './Jokes';
 import {selectFetch} from '../../apiCalls/ApiCalls';
 import {
-  randomAdvice,
-  searchAdvice
+  randomJoke,
+  searchJoke
 } from '../../Actions/index';
 
 // 86.36 |      100 |    72.73 |       90
@@ -116,7 +116,21 @@ describe('Jokes', () => {
   })
 
   describe('mapDispatchToProps', () => {
+    it('mapDispatchToProps.getRandomJoke call dispatch', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = randomJoke(await selectFetch('dog'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getRandomJoke()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
 
+    it('mapDispatchToProps.getSearchJoke should call dispatch', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = searchJoke(await selectFetch('dog'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getSearchJoke()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
   })
 
   describe('mapStateToProps', () => {

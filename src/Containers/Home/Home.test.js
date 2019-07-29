@@ -49,7 +49,7 @@ describe('Home', () => {
 
   describe('mapDispatchToProps', () => {
 
-    it('mapDispatchToProps.getRandomFacts should be jest.fn()', async () => {
+    it('mapDispatchToProps.getFactOfTheDay should be jest.fn()', async () => {
       const mockDispatch = jest.fn()
       const actionToDispatch = factOfTheDay(await selectFetch('dog'))
       const mappedProps = mapDispatchToProps(mockDispatch)
