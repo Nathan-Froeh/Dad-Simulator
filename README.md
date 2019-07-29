@@ -41,6 +41,7 @@ Testing was the second hardest, I am a big fan of testing and have never tested 
 3. Rebuild with React Native!
 
 ## The Fun Stuff!
+All images shown on iPhone 5
 
 ![Home Page](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/home-page.png)
 ![Menu Page](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/menu-page.png)
