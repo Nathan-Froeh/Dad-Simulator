@@ -5,6 +5,11 @@ import {
   mapDispatchToProps,
   mapStateToProps
 } from './Home';
+import {selectFetch} from '../../apiCalls/ApiCalls';
+import {
+  randomAdvice,
+  searchAdvice
+} from '../../Actions/index';
 
 
 // 80 |      100 |    66.67 |     87.5

@@ -5,6 +5,8 @@ import {
   mapStateToProps
 } from './Facts';
 import {shallow} from 'enzyme';
+import {selectFetch} from '../../apiCalls/ApiCalls';
+import {randomFact} from '../../Actions/index';
 
 // 80 |      100 |    66.67 |     87.5 
 // 35
@@ -46,6 +48,14 @@ describe('Facts', () => {
 
   describe('mapDispatchToProps', () => {
 
+    it('mapDispatchToProps.getRandomFacts should be jest.fn()', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = randomFact(await selectFetch('dog'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getRandomFacts()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+    
   })  
 
   describe('mapStateToProps', () => {
