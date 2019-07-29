@@ -4,9 +4,10 @@ import {
   mapDispatchToProps
 } from './App';
 import {shallow} from 'enzyme';
+import {factOfTheDay} from '../../Actions/index';
+import {selectFetch} from '../../apiCalls/ApiCalls';
 
-// 60 |      100 |       50 |       75 
-// 55
+// 100% Test Coverage
 
 describe('App', () => {
   let wrapper
@@ -15,7 +16,6 @@ describe('App', () => {
   }
   beforeEach(() => {
     wrapper = shallow(<App {...props}/>)
-
   })
 
   it('App should mathc snapshot', () => {
@@ -30,8 +30,12 @@ describe('App', () => {
 
   describe('mapDispatchToProps', () => {
 
-    xit('should contain getFactOfTheDay', () => {
-
+    it('getFactOfTheDay should be called with factOfTheDay()', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = factOfTheDay(await selectFetch(''))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getFactOfTheDay()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
   })
 

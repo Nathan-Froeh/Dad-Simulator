@@ -11,9 +11,7 @@ import {
 } from '../../Actions/index';
 import {selectFetch} from '../../apiCalls/ApiCalls';
 
-// 86.36 |      100 |    72.73 |       90 
-// 73,75
-
+// 100% Test Coverage
 
 describe('Advice', () => {
   let wrapper, instance
@@ -118,7 +116,6 @@ describe('Advice', () => {
       const actionToDispatch = randomAdvice(await selectFetch('random'))
       const mappedProps = mapDispatchToProps(mockDispatch)
       await mappedProps.getRandomAdvice('random')
-    
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
 
