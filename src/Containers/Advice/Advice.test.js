@@ -122,8 +122,12 @@ describe('Advice', () => {
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
 
-    xit('mapDispatchToProps.getSearchAdvice should be jest.fn()', async () => {
-    
+    it('mapDispatchToProps.getSearchAdvice should be jest.fn()', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = searchAdvice(await selectFetch('dog'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getSearchAdvice()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
   })
   describe('mapStateToProps', () => {
