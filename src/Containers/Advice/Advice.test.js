@@ -11,9 +11,7 @@ import {
 } from '../../Actions/index';
 import {selectFetch} from '../../apiCalls/ApiCalls';
 
-// 86.36 |      100 |    72.73 |       90 
-// 73,75
-
+// 100% Test Coverage
 
 describe('Advice', () => {
   let wrapper, instance
@@ -96,18 +94,37 @@ describe('Advice', () => {
     expect(wrapper.state('visibleAdvice')).toBe('search')
   })
 
+  it('should call handleSubmit on submit', () => {
+    instance.handleSubmit = jest.fn()
+    wrapper.setState({category: 'random'})
+    expect(instance.handleSubmit).toHaveBeenCalledTimes(0)
+    wrapper.find('form').simulate('submit')
+    expect(instance.handleSubmit).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call handleChange on submit', () => {
+    instance.handleChange = jest.fn()
+    // wrapper.setState({visibleAdvice: 'search'})
+    expect(wrapper.state('category')).toEqual('random')
+    wrapper.find('.input').simulate('change', event)
+    expect(wrapper.state('category')).toEqual('batman')
+  })
+
   describe('mapDispatchToProps', () => {
-    xit('mapDispatchToProps.getRandomAdvice should be jest.fn()', async () => {
+    it('mapDispatchToProps.getRandomAdvice should be jest.fn()', async () => {
       const mockDispatch = jest.fn()
       const actionToDispatch = randomAdvice(await selectFetch('random'))
       const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.getRandomAdvice('random')
-    
+      await mappedProps.getRandomAdvice('random')
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
 
-    xit('mapDispatchToProps.getSearchAdvice should be jest.fn()', async () => {
-    
+    it('mapDispatchToProps.getSearchAdvice should be jest.fn()', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = searchAdvice(await selectFetch('dog'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getSearchAdvice()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
   })
   describe('mapStateToProps', () => {

@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 import {selectFetch} from '../../apiCalls/ApiCalls';
 import {randomFact} from '../../Actions/index';
 import {NavLink} from 'react-router-dom';
-
+import './Facts.scss';
+import menu from '../../images/menu.png';
 
 export class Facts extends Component {
   componentDidMount() {
@@ -17,15 +18,25 @@ export class Facts extends Component {
 
   render() {
     return(
-      <div>
+      <div className='facts'>
         <nav>
-          <NavLink to={'/menu'}>
-            <p>Menu</p>
+          <NavLink 
+            to={'/menu'}
+            className='menu'
+          >
+            <img src={menu} alt='menu button'/>
           </NavLink>
           <h1>Virtual Dad Simulator</h1>
         </nav>
-        <button onClick={this.getFact} className='button'>Refresh</button>
-        <h2>{this.props.randomFact}</h2>
+        <main>
+          <button 
+            onClick={this.getFact} 
+            className='button'
+          >
+            Dad Facts
+          </button>
+          <h2>{this.props.randomFact}</h2>
+        </main>
       </div>
     )
   }
@@ -41,3 +52,8 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Facts)
+
+
+
+
+

@@ -1,5 +1,6 @@
 import {factOfTheDayReducer} from './factOfTheDayReducer';
 
+// 100% Test Coverage
 
 describe('factOfTheDayReducer', () => {
   const action = {

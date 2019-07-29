@@ -6,7 +6,8 @@ import {
   searchAdvice
 } from '../../Actions/index';
 import {NavLink} from 'react-router-dom';
-
+import './Advice.scss';
+import menu from '../../images/menu.png';
 
 export class Advice extends Component {
   constructor(props) {
@@ -46,24 +47,32 @@ export class Advice extends Component {
 
   render() {
     return(
-      <div>
+      <div className='advice'>
         <nav>
-          <NavLink to={'/menu'}>
-            <p>Menu</p>
+          <NavLink 
+            to={'/menu'}
+            className='menu'
+          >
+            <img src={menu} alt='menu button'/>
           </NavLink>
           <h1>Virtual Dad Simulator</h1>
         </nav>
-        <form onSubmit={this.handleSubmit}>
-          <input 
-            type="text" 
-            name='category' 
-            value={this.state.category}
-            onChange={this.handleChange}
-          />
-          <input type="submit" value='Refresh'/>
-        </form>
-        <h2>{this.state.visibleAdvice === 'random' && this.props.randomAdvice}</h2>
-        <h2>{this.state.visibleAdvice === 'search' && this.props.searchAdvice}</h2>
+        <main>
+          <form onSubmit={this.handleSubmit}>
+            <input 
+              type="text" 
+              name='category' 
+              value={this.state.category}
+              onChange={this.handleChange}
+              className='input'
+            />
+            <input type="submit" value='Dad Advice' className='button'/>
+          </form>
+          <h2>{this.state.visibleAdvice === 'random' 
+            && this.props.randomAdvice}</h2>
+          <h2>{this.state.visibleAdvice === 'search' 
+            && this.props.searchAdvice}</h2>
+        </main>
       </div>
     )
   }

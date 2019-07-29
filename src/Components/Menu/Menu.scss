@@ -1,0 +1,20 @@
+nav {
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+
+    .link {
+      padding: 10px;
+      button {
+        height: 50px;
+        width: 40vw;
+        border: black solid 2px;
+        background: none;
+        border-radius: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -5,9 +5,13 @@ import {
   mapDispatchToProps,
   mapStateToProps
 } from './Jokes';
+import {selectFetch} from '../../apiCalls/ApiCalls';
+import {
+  randomJoke,
+  searchJoke
+} from '../../Actions/index';
 
-// 86.36 |      100 |    72.73 |       90
-// 72,74 
+// 100% Test Coverage
 
 
 describe('Jokes', () => {
@@ -97,22 +101,35 @@ describe('Jokes', () => {
     expect(wrapper.state('visibleJoke')).toEqual('search')
   })
 
-  xit('input should call handleChange on change', () => {
-    instance.handleChange = jest.fn()
-    expect(instance.handleChange).not.toHaveBeenCalled()
+  it('input should call handleChange on change', () => {
+    expect(wrapper.state('category')).toEqual('random')
     wrapper.find('.input').simulate('change', event)
-    expect(instance.handleChange).toHaveBeenCalled()
+    expect(wrapper.state('category')).toEqual('batman')
   })
 
-  xit('form submit should call handleSubmit on change', () => {
-    instance.handleSubmit = jest.fn()
-    expect(instance.handleSubmit).not.toHaveBeenCalled()
+  it('form submit should call handleSubmit on submit', () => {
+    instance.viewRandom = jest.fn()
+    expect(instance.viewRandom).not.toHaveBeenCalled()
     wrapper.find('form').simulate('submit', event)
-    expect(instance.handleSubmit).toHaveBeenCalled()
+    expect(instance.viewRandom).toHaveBeenCalled()
   })
 
   describe('mapDispatchToProps', () => {
+    it('mapDispatchToProps.getRandomJoke call dispatch', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = randomJoke(await selectFetch('dog'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getRandomJoke()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
 
+    it('mapDispatchToProps.getSearchJoke should call dispatch', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = searchJoke(await selectFetch('dog'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getSearchJoke()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
   })
 
   describe('mapStateToProps', () => {

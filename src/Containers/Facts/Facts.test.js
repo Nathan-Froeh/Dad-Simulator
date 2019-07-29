@@ -5,9 +5,10 @@ import {
   mapStateToProps
 } from './Facts';
 import {shallow} from 'enzyme';
+import {selectFetch} from '../../apiCalls/ApiCalls';
+import {randomFact} from '../../Actions/index';
 
-// 80 |      100 |    66.67 |     87.5 
-// 35
+// 100% Test Coverage
 
 describe('Facts', () => {
   let wrapper, instance
@@ -37,14 +38,22 @@ describe('Facts', () => {
     expect(props.getRandomFacts).toHaveBeenCalledTimes(4)
   })  
 
-  xit('should call getFact on click', () => {
-    wrapper.instance().getFact = jest.fn()
+  it('should call getRandomFacts on click', () => {
+    expect(props.getRandomFacts).toHaveBeenCalledTimes(5)
     wrapper.find('button').simulate('click')
-    expect(wrapper.instance().getFact).toHaveBeenCalled()
+    expect(props.getRandomFacts).toHaveBeenCalledTimes(6)
   })
 
 
   describe('mapDispatchToProps', () => {
+
+    it('mapDispatchToProps.getRandomFacts should be jest.fn()', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = randomFact(await selectFetch('dog'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getRandomFacts()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
 
   })  
 

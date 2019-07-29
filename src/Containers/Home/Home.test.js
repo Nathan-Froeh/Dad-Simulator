@@ -5,10 +5,11 @@ import {
   mapDispatchToProps,
   mapStateToProps
 } from './Home';
+import {selectFetch} from '../../apiCalls/ApiCalls';
+import {factOfTheDay} from '../../Actions/index';
 
 
-// 80 |      100 |    66.67 |     87.5
-// 35
+// 100% Test Coverage
 
 describe('Home', () => {
   let wrapper, instance
@@ -45,14 +46,28 @@ describe('Home', () => {
     expect(props.getFactOfTheDay).toHaveBeenCalled()
   })
 
-  it('factOfTheDay should have a state of factOfTheDay', () => {
-    const mockState = {
-      factOfTheDay: 'factOfTheDay'
-    }
-    const expected = {
-      factOfTheDay: 'factOfTheDay'
-    }
-    const mappedProps = mapStateToProps(mockState)
-    expect(mappedProps).toEqual(expected)
+  describe('mapDispatchToProps', () => {
+
+    it('mapDispatchToProps.getFactOfTheDay should be jest.fn()', async () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = factOfTheDay(await selectFetch('dog'))
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      await mappedProps.getFactOfTheDay()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    })
+    
+  })  
+
+  describe('mapStateToProps', () => {
+    it('factOfTheDay should have a state of factOfTheDay', () => {
+      const mockState = {
+        factOfTheDay: 'factOfTheDay'
+      }
+      const expected = {
+        factOfTheDay: 'factOfTheDay'
+      }
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
+    })
   })
 })
