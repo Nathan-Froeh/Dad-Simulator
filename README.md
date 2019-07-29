@@ -14,7 +14,7 @@ The Facts page is meant to display truly 'Random Useless Info' so no search func
 
 ## Project Specs
 
-This solo project was completed in 4 days
+This solo project was completed in 5 days
 The only requirements where to use and test React, Redux, and Router after coming up with an app idea from scratch, and finding an API that will allow access by a front end.
 Beyond that it was up to me to figure it all out and I had a TON of fun doing that!
 [check out the specs here](https://frontend.turing.io/projects/binary-challenge.html)
