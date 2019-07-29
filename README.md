@@ -5,9 +5,15 @@
 ![Definition of Dad Joke](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/dad-joke-definition.png)
 
 Do you like jokes that aren't funny, random useless info, and advice for any occasion?
-The Virtual Dad Simulator v1 will disply the fact of the day upon entering the home page with the option to click the menu to view facts, jokes, and advice, all of which are Dad themed.
+The Virtual Dad Simulator v1 is a mobile first app that will disply the fact of the day upon entering the home page with the option to click the menu to view facts, jokes, and advice, all of which are Dad themed.
 Both the Jokes and Advice default to random but also have search option to display an item at random that fits any category you choose, so long as one is on file. It will notify you if there are no available results.
 The Facts page is meant to display truly 'Random Useless Info' so no search function is available to keep it that way.
+
+### Coming Soon
+ 
+1. Sharing Via text with Twilio!
+2. Sharing Via email with SendGrid!
+3. Rebuild with React Native!
 
 ## Project Specs
 
