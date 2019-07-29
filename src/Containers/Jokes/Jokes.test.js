@@ -97,18 +97,18 @@ describe('Jokes', () => {
     expect(wrapper.state('visibleJoke')).toEqual('search')
   })
 
-  xit('input should call handleChange on change', () => {
+  it('input should call handleChange on change', () => {
     instance.handleChange = jest.fn()
     expect(instance.handleChange).not.toHaveBeenCalled()
     wrapper.find('.input').simulate('change', event)
     expect(instance.handleChange).toHaveBeenCalled()
   })
 
-  xit('form submit should call handleSubmit on change', () => {
-    instance.handleSubmit = jest.fn()
-    expect(instance.handleSubmit).not.toHaveBeenCalled()
+  it('form submit should call handleSubmit on submit', () => {
+    instance.viewRandom = jest.fn()
+    expect(instance.viewRandom).not.toHaveBeenCalled()
     wrapper.find('form').simulate('submit', event)
-    expect(instance.handleSubmit).toHaveBeenCalled()
+    expect(instance.viewRandom).toHaveBeenCalled()
   })
 
   describe('mapDispatchToProps', () => {
