@@ -32,6 +32,13 @@ Testing was the second hardest, I am a big fan of testing and have never tested 
 
 ![100% Test Coverage](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/100%25-test-coverage.png)
 
+## Install
+1. clone repo
+2. cd into 'dad-simulator'
+3. run ```npm install``` 
+4. run ```npm start```
+5. Hve some FUN
+
 ## The Fun Stuff!
 
 ![Home Page](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/home-page.png)
