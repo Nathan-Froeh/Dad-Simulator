@@ -98,10 +98,9 @@ describe('Jokes', () => {
   })
 
   it('input should call handleChange on change', () => {
-    instance.handleChange = jest.fn()
-    expect(instance.handleChange).not.toHaveBeenCalled()
+    expect(wrapper.state('category')).toEqual('random')
     wrapper.find('.input').simulate('change', event)
-    expect(instance.handleChange).toHaveBeenCalled()
+    expect(wrapper.state('category')).toEqual('batman')
   })
 
   it('form submit should call handleSubmit on submit', () => {
