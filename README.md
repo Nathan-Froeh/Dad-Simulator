@@ -23,3 +23,11 @@ The hardest part was coming up with an idea that would be a challenge but still 
 Testing was the second hardest, I am a big fan of testing and have never tested Redux before and my goal was 100% test coverage which I am quite proud to have accomplished!
 
 ![100% Test Coverage](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/100%25-test-coverage.png)
+
+## The Fun Stuff!
+
+![Home Page](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/home-page.png)
+![Menu Page](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/menu-page.png)
+![Facts Page](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/random-fact.png)
+![Jokes Page](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/random-joke.png)
+![Advice Page](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/life-advice.png)
