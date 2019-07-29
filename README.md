@@ -13,4 +13,13 @@ The Facts page is meant to display truly 'Random Useless Info' so no search func
 
 This solo project was completed in 4 days
 The only requirements where to use and test React, Redux, and Router after coming up with an app idea from scratch, and finding an API that will allow access by a front end.
-Beyond that it was up to me to figure it all out
+Beyond that it was up to me to figure it all out and I had a TON of fun doing that!
+[check out the specs here](https://frontend.turing.io/projects/binary-challenge.html)
+
+## Challenges
+
+The hardest part was coming up with an idea that would be a challenge but still one I could build in a short period of time that would also be appropriate to all. The original idea was and insult generator that would send a number you choose an insult but worded like Yoda would say it, but some of the insults were a bit over the top.
+
+Testing was the second hardest, I am a big fan of testing and have never tested Redux before and my goal was 100% test coverage which I am quite proud to have accomplished!
+
+![100% Test Coverage](https://github.com/Nathan-Froeh/Dad-Simulator/blob/master/src/images/100%25-test-coverage.png)
