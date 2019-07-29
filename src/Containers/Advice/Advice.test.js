@@ -104,12 +104,12 @@ describe('Advice', () => {
     expect(instance.handleSubmit).toHaveBeenCalledTimes(1)
   })
 
-  it('should call handleSubmit on submit', () => {
-    instance.handleSubmit = jest.fn()
-    wrapper.setState({visibleAdvice: 'search'})
-    expect(instance.handleSubmit).toHaveBeenCalledTimes(0)
-    wrapper.find('form').simulate('submit')
-    expect(instance.handleSubmit).toHaveBeenCalledTimes(1)
+  it('should call handleChange on submit', () => {
+    instance.handleChange = jest.fn()
+    // wrapper.setState({visibleAdvice: 'search'})
+    expect(wrapper.state('category')).toEqual('random')
+    wrapper.find('.input').simulate('change', event)
+    expect(wrapper.state('category')).toEqual('batman')
   })
 
   describe('mapDispatchToProps', () => {

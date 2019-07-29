@@ -64,6 +64,7 @@ export class Advice extends Component {
               name='category' 
               value={this.state.category}
               onChange={this.handleChange}
+              className='input'
             />
             <input type="submit" value='Dad Advice' className='button'/>
           </form>
