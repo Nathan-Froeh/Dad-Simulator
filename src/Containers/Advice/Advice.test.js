@@ -113,11 +113,11 @@ describe('Advice', () => {
   })
 
   describe('mapDispatchToProps', () => {
-    xit('mapDispatchToProps.getRandomAdvice should be jest.fn()', async () => {
+    it('mapDispatchToProps.getRandomAdvice should be jest.fn()', async () => {
       const mockDispatch = jest.fn()
       const actionToDispatch = randomAdvice(await selectFetch('random'))
       const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.getRandomAdvice('random')
+      await mappedProps.getRandomAdvice('random')
     
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     })
