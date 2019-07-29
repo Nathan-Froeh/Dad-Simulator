@@ -7,6 +7,7 @@ import {
   searchJoke
 } from './index';
 
+// 100% Test Coverage
 
 describe('Actions', () => {
   const input = 'I am Batman';

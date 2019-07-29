@@ -1,11 +1,6 @@
 import allReducers from './index';
-import {factOfTheDayReducer} from './factOfTheDayReducer';
-import {randomFactsReducer} from './randomFactsReducer';
-import {randomAdviceReducer} from './randomAdviceReducer';
-import {randomJokesReducer} from './randomJokesReducer';
-import {searchAdviceReducer} from './searchAdviceReducer';
-import {searchJokesReducer} from './searchJokesReducer';
 
+// 100% Test Coverage
 
 describe('allReducers', () => {
 

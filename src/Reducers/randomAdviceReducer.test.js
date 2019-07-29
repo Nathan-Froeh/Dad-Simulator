@@ -1,5 +1,7 @@
 import {randomAdviceReducer} from './randomAdviceReducer'
 
+// 100% Test Coverage
+
 describe('randomAdviceReducer', () => {
   const action = {
     type: 'RANDOM_ADVICE',

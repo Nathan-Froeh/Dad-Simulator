@@ -1,6 +1,7 @@
 import Call from './Cleaner';
 import {fetchCall} from './ApiCalls';
 
+// 100% Test Coverage
 
 describe('Cleaner', () => {
   const url = 'https://batman.com';

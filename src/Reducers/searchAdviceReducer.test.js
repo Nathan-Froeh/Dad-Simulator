@@ -1,5 +1,7 @@
 import {searchAdviceReducer} from './searchAdviceReducer'
 
+// 100% Test Coverage
+
 describe('searchAdviceReducer', () => {
   const action = {
     type: 'SEARCH_ADVICE',

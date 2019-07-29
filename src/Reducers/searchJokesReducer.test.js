@@ -1,5 +1,7 @@
 import {searchJokesReducer} from './searchJokesReducer'
 
+// 100% Test Coverage
+
 describe('searchJokesReducer', () => {
   const action = {
     type: 'SEARCH_JOKES',

@@ -9,8 +9,7 @@ import {selectFetch} from '../../apiCalls/ApiCalls';
 import {factOfTheDay} from '../../Actions/index';
 
 
-// 80 |      100 |    66.67 |     87.5
-// 35
+// 100% Test Coverage
 
 describe('Home', () => {
   let wrapper, instance

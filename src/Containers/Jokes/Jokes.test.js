@@ -11,8 +11,7 @@ import {
   searchJoke
 } from '../../Actions/index';
 
-// 86.36 |      100 |    72.73 |       90
-// 72,74 
+// 100% Test Coverage
 
 
 describe('Jokes', () => {

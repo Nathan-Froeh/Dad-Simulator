@@ -1,5 +1,7 @@
 import {randomFactsReducer} from './randomFactsReducer'
 
+// 100% Test Coverage
+
 describe('randomFactsReducer', () => {
   const action = {
     type: 'RANDOM_FACT',
