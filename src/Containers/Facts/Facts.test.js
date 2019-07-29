@@ -37,10 +37,10 @@ describe('Facts', () => {
     expect(props.getRandomFacts).toHaveBeenCalledTimes(4)
   })  
 
-  xit('should call getFact on click', () => {
-    wrapper.instance().getFact = jest.fn()
+  it('should call getRandomFacts on click', () => {
+    expect(props.getRandomFacts).toHaveBeenCalledTimes(5)
     wrapper.find('button').simulate('click')
-    expect(wrapper.instance().getFact).toHaveBeenCalled()
+    expect(props.getRandomFacts).toHaveBeenCalledTimes(6)
   })
 
 
