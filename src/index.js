@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './Containers/App/App';
-import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import allReducers from './Reducers/index';
@@ -20,4 +19,3 @@ ReactDOM.render(
 </Provider>
   , document.getElementById('root'));
 
-serviceWorker.unregister();
