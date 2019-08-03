@@ -5,6 +5,7 @@ import {factOfTheDay} from '../../Actions/index'
 import {NavLink} from 'react-router-dom';
 import './Home.scss';
 import menu from '../../images/menu.png';
+// import {sendText} from '../../send_sms'
 
 export class Home extends Component {
 
