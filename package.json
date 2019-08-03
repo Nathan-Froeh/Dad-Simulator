@@ -10,7 +10,8 @@
     "react-scripts": "3.0.1",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "twilio": "^3.33.2"
   },
   "scripts": {
     "start": "react-scripts start",
